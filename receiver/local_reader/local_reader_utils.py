@@ -57,6 +57,8 @@ def split_gap_string_by_gap_number(gap_string,gap_number):
                     continue
                 else:
                     break
+            if(index==len(gap_string)-1):
+                return "",""
             if(index+1>gap_number-1):
                 return gap_string[:i],gap_string[j:len(gap_string)]
     return gap_string,""
