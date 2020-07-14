@@ -1,6 +1,6 @@
 import action as ac
 from queue import Queue
-#ac.init()
+ac.init()
 import receiver as rv
 queue = Queue()
 t1 = rv.Eye(queue)

@@ -38,6 +38,22 @@ def change_raw_string_to_gap_string(raw_string):
             gap_string = gap_string+char
     return gap_string
 
+def change_raw_array_to_gap_array(raw_array):
+    gap_array = []
+    for char in raw_array:
+        if(char in g.time_gap):
+            gap_number = g.time_gap.get(char)
+            for i in range(gap_number):
+                gap_array.append(g.time_gap_symbol)
+        else:
+            gap_array.append(char)
+    return gap_array
+
+def change_array_to_str(raw_array):
+    str1 = ""
+    for i in range(len(raw_array)):
+        str1 = str1+raw_array[i]
+    return str1
 
 #从gap_string中提取需要的信息
 #gap_number gap_number表示提取的空白符号的长度

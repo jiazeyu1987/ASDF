@@ -11,6 +11,8 @@ class Eye(Thread):
     def run(self):
         value = read_file(g.number_book_name)
         for i in range(len(value)):
+            # if(i==50):
+            #     time.sleep(100)
             self.queue.put(value[i])
 
 
