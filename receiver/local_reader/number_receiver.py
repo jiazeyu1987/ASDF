@@ -17,9 +17,7 @@ class NumberReceiver(Thread):
         self.char_array = []
         #无聊代码的个数
         self.gap_number = 0
-        #处理数据的数据结构
-        self.tree1 = Tree1()
-
+        self.chainlist = ChainListMain()
     '''
         eye 会将看到的内容逐个放入queue中
         run 方法从queue中提取数据
@@ -30,8 +28,11 @@ class NumberReceiver(Thread):
             try:
                 item  = self.queue.get(True,self.block_timeout)
                 self.addItem(item)
+
             except Exception:
                 self.addItem(g.time_gap_symbol)
+                self.chainlist.print()
+                return
 
 
     '''
@@ -81,6 +82,10 @@ class NumberReceiver(Thread):
     def submit(self):
         #print(self.char_array)
         self.char_str = change_array_to_str(self.char_array)
-        self.tree1.on_data_enter(change_raw_string_to_gap_string(self.char_str))
+
+        #处理数据的数据结构
+        simple_node_chain = SimpleNodeChain()
+        simple_node_chain.on_data_enter(change_raw_string_to_gap_string(self.char_str))
+        self.chainlist.add_chain(simple_node_chain)
         pass
 
