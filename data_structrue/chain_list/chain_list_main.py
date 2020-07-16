@@ -1,13 +1,31 @@
 import data_structrue as ds
-from .. import FastTree,SimpleNodeChain
+from .. import *
+import globalconfig as g
 # 省略了信息源问题
-class ChainListMain:
-    def __init__(self):
-        self.fast_tree = FastTree()
+from threading import Thread, Event
+class ChainListMain(Thread):
+    def __init__(self, inner_message_queue,fast_tree):
+        Thread.__init__(self)
+        self.inner_message_queue = inner_message_queue
+        self.block_timeout = 1
+        self.fast_tree= fast_tree
         self.chain_list = []
 
-    #获取了一条新的信息
-    #获取到的新的信息可能有以下几个可能
+
+    def run(self):
+        while True:
+            try:
+                inner_data  = self.inner_message_queue.get(True,self.block_timeout)
+                if(inner_data.value==g.sleep_symbol):
+                    self.fast_tree.end_thread()
+                    return
+                else:
+                    self.addItem(inner_data)
+            except Exception:
+                pass
+
+    # 获取了一条新的信息
+    # 获取到的新的信息可能有以下几个可能
     # 1.陈述句，描述结构
     # 2.疑问句，询问结构
     # 3.未识别单元
@@ -25,9 +43,11 @@ class ChainListMain:
                 对比陈述句要求词组长度相同，内容只有一项不同，将不同项合并为一个或者融合入一个类别
                 对比陈述句的不同处可能在开头，可能在中间，可能在结尾
     '''
-    def add_chain(self,chain):
-        self.fast_tree.add_simple_node_chain(chain)
-        self.chain_list.append(chain)
+    def addItem(self,inner_data:InnerData):
+        if(inner_data.source == InnerData.OUTER):
+            self.fast_tree.add_value(inner_data.value)
+        pass
+
 
 
     def print(self):

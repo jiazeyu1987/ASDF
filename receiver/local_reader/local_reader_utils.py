@@ -60,14 +60,15 @@ def change_array_to_str(raw_array):
 #比如说 1 A   2 B   3 C   4 D   5 E
 #gap_number=1,返回值为1,A   2 B   3 C   4 D   5 E
 #gap_number>1,返回值为1 A，2 B   3 C   4 D   5 E
-def split_gap_string_by_gap_number(gap_string,gap_number):
+def split_gap_string_by_gap_number(gap_string1,gap_number):
+    gap_string = gap_string1
     if(len(gap_string)==0):
         return "",""
     for i in range(len(gap_string)):
         char = gap_string[i]
         if(char == g.time_gap_symbol):
             index = 0
-            for j in range(i+1,len(gap_string)):
+            for j in range(i,len(gap_string)):
                 if(gap_string[j] == g.time_gap_symbol):
                     index+=1
                     continue
@@ -76,7 +77,9 @@ def split_gap_string_by_gap_number(gap_string,gap_number):
             if(index==len(gap_string)-1):
                 return "",""
             if(index+1>gap_number-1):
-                return gap_string[:i],gap_string[j:len(gap_string)]
+                val1 = gap_string[:i]
+                val2 = gap_string[i+index:len(gap_string)]
+                return val1,val2
     return gap_string,""
 
 #将gapstring从最大的gap分开
