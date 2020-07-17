@@ -31,7 +31,7 @@ class NumberReceiver(Thread):
                 item  = self.out_string_queue.get(True,self.block_timeout)
 
                 if(item==g.sleep_symbol):
-                    self.inner_message_queue.put(InnerData(InnerData.OUTER, g.sleep_symbol))
+                    self.inner_message_queue.put(InnerData(InnerData.OUTER_SEE, g.sleep_symbol))
                     return
                 else:
                     self.addItem(item)
@@ -93,7 +93,9 @@ class NumberReceiver(Thread):
         new_str = change_raw_string_to_gap_string(nn)
         val1,rest = split_gap_string_by_gap_number(new_str,1)
         while True:
-            self.inner_message_queue.put(InnerData(InnerData.OUTER,val1))
+            simple_node_chain = SimpleNodeChain()
+            simple_node_chain.on_data_enter(val1)
+            self.inner_message_queue.put(InnerData(InnerData.OUTER_SEE,simple_node_chain))
             if(len(rest)>0):
                 val1, rest = split_gap_string_by_gap_number(rest, 1)
             else:
@@ -101,6 +103,11 @@ class NumberReceiver(Thread):
         # for val1 in vallist :
         #     if(len(val1)>0):
         #         print("KKKKKKKKKKKKKKK",val1,":",new_str)
-        #         self.inner_message_queue.put(InnerData(InnerData.OUTER,val1))
+        #         self.inner_message_queue.put(InnerData(InnerData.OUTER_SEE,val1))
 
+        #处理数据的数据结构
+        simple_node_chain = SimpleNodeChain()
+        simple_node_chain.on_data_enter(change_raw_string_to_gap_string(self.char_str))
+        self.chainlist.add_chain(simple_node_chain)
+        pass
 

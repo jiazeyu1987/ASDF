@@ -44,9 +44,11 @@ class ChainListMain(Thread):
                 对比陈述句的不同处可能在开头，可能在中间，可能在结尾
     '''
     def addItem(self,inner_data:InnerData):
-        if(inner_data.source == InnerData.OUTER):
-            self.fast_tree.add_value(inner_data.value)
+        if(inner_data.source == InnerData.OUTER_SEE):
+            self.fast_tree.add_simple_node_chain(inner_data.value)
+            self.chain_list.append(inner_data.value)
         pass
+
 
 
 

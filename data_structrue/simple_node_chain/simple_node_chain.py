@@ -8,25 +8,28 @@ class SimpleNodeChain:
 
     #从receiver/eye异步接收到的数据
     def on_data_enter(self,char_str):
-        start_index = -1
-        len1 = len(char_str)
-        for i in range(len1):
-            char1 = char_str[i]
-            if (char1 == g.time_gap_symbol):
-                if(start_index!=-1):
-                    val = char_str[start_index:i]
-                    start_index = -1
-                    self.enter_node_val(val)
-            else:
-                if(start_index==-1):
-                    start_index = i
-                if(i==len1-1):
-                    val = char_str[start_index:len1]
-                    start_index = -1
-                    self.enter_node_val(val)
+        # start_index = -1
+        # len1 = len(char_str)
+        # for i in range(len1):
+        #     char1 = char_str[i]
+        #     if (char1 == g.time_gap_symbol):
+        #         if(start_index!=-1):
+        #             val = char_str[start_index:i]
+        #             start_index = -1
+        #             self.enter_node_val(val)
+        #     else:
+        #         if(start_index==-1):
+        #             start_index = i
+        #         if(i==len1-1):
+        #             val = char_str[start_index:len1]
+        #             start_index = -1
+        #             self.enter_node_val(val)
+        for char1 in char_str:
+            self.enter_node_val(char1)
+
 
     def print(self):
-        str1 = "list1 info:"
+        str1 = "simple node chain info:"
         tmp_node = self.head
         index=1
         while True:
@@ -35,7 +38,7 @@ class SimpleNodeChain:
             if(index>50):
                 break
             index+=1
-            str1 = str1 + tmp_node.value+","
+            str1 = str1 + tmp_node.value+" - "
             if(tmp_node.follow_edge==None):
                 break
             tmp_node = tmp_node.follow_edge.node_to
