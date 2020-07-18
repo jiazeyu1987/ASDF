@@ -6,10 +6,10 @@ class FastEdge(EdgeBase):
 
 
     def add_weight(self):
-        self.strong+=g.add_weight_number
+        self.strong+=g.g_fn_add_weight_number
 
     def lose_weight(self):
-        self.strong-=g.lose_weight_number
+        self.strong-=g.g_fn_lose_weight_number
 
     def is_strong_enough(self):
-        return self.strong>1+g.add_weight_number
+        return self.strong>1+g.g_fn_add_weight_number

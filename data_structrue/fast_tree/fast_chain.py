@@ -16,10 +16,10 @@ class FastChain:
            if(current_chain_node!=None):
                char1 = current_chain_node.value
                if (char1 in map1):
-                   map1[char1].strong += g.add_weight_number
+                   map1[char1].strong += g.g_fn_add_weight_number
                else:
                    map1[char1] = FastNode(char1)
-                   map1[char1].strong += g.add_weight_number
+                   map1[char1].strong += g.g_fn_add_weight_number
                fast_node = map1[char1]
                if(current_fast_node!=None):
                     edge = current_fast_node.add_node(fast_node)
@@ -35,7 +35,7 @@ class FastChain:
                break
 
 
-    def analyse_fast_chain(self):
+    def get_fast_compare_result(self):
         chain = SimpleNodeChain()
         simple_current = None
         for edge in self.edgelist:
@@ -63,10 +63,11 @@ class FastChain:
             node_to.lose_weight()
             edge.lose_weight()
 
-    def print(self):
+
+    def __str__(self):
         len1 = len(self.edgelist)
-        str1 = "fast chain info:"+len1.__str__()+" "
+        str1 = "fast chain info:" + len1.__str__() + " "
         for edge in self.edgelist:
             node_to = edge.node_to
-            str1 = str1 +" - "+ node_to.value
-        print(str1)
+            str1 = str1 + " - " + node_to.value
+        return str1

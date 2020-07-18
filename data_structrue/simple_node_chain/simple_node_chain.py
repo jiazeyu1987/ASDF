@@ -28,21 +28,21 @@ class SimpleNodeChain:
             self.enter_node_val(char1)
 
 
-    def print(self):
+    def __str__(self):
         str1 = "simple node chain info:"
         tmp_node = self.head
-        index=1
+        index = 1
         while True:
-            if(tmp_node==None):
+            if (tmp_node == None):
                 break
-            if(index>50):
+            if (index > 50):
                 break
-            index+=1
-            str1 = str1 + tmp_node.value+" - "
-            if(tmp_node.follow_edge==None):
+            index += 1
+            str1 = str1 + tmp_node.value + " - "
+            if (tmp_node.follow_edge == None):
                 break
             tmp_node = tmp_node.follow_edge.node_to
-        print(str1)
+        return str1
 
     def enter_node_val(self,val):
         if(self.head==None):

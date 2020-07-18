@@ -17,7 +17,7 @@ class FastNode(NodeBase):
         return self.follow_edge_map[node1.value]
 
     def is_strong_enough(self):
-        return self.strong>1+g.add_weight_number
+        return self.strong>1+g.g_fn_add_weight_number
 
 
     def lose_weight(self):
