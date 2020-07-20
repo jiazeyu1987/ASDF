@@ -6,6 +6,9 @@ class SimpleNodeChain:
         #current node
         self.current_node = None
 
+    def get_head(self)->SimpleNodeChainNode:
+        return self.head
+
     #从receiver/eye异步接收到的数据
     def on_data_enter(self,char_str):
         # start_index = -1

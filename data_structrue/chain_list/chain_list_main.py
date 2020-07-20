@@ -48,7 +48,7 @@ class ChainListMain(Thread):
             self.fast_tree.add_simple_node_chain(inner_data.value)
             self.chain_list.append(inner_data.value)
         elif(inner_data.source == InnerData.FAST_TREE):
-            #print(inner_data.value)
+            print(inner_data.value)
             if(g.g_ps_desire_point<5):
                 pass
 
@@ -69,6 +69,7 @@ class ChainListMain(Thread):
         2.前方有高等优先命令，忽略它
         
         *消息流的处理*
+        消息流在主处理器中处理
         每条消息流的处理有三种可能
         1.有一个或者若干个成熟的处理模块来处理它
         2.存在一个或者若干个处理模块，但是不确定其正确性
@@ -78,7 +79,14 @@ class ChainListMain(Thread):
         消息处理模块是若干个内置消息处理单元的组合
         
         *消息处理单元*
+        1
         
+        *二维印象区*
+        二维印象区是一个Width*Height大小的二维数组
+        二维印象区有缓存功能，能够缓存若干页面，超过缓存区大小的被遗忘
+        二维印象区的内容可以被永久映射到主存储区，主存储区的内容也可以映射到二维印象区
+        一维印象区是二维印象区的特例
+        二维印象区的页面代表着时间先后关系
         
         
     '''

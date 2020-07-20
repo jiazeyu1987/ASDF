@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8bccdad-5289-4a54-a9ad-cae6dc55cba0" name="Default" comment="2020 7 17">
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/cmd/__init__.py" />
+    <list default="true" id="e8bccdad-5289-4a54-a9ad-cae6dc55cba0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/impress_area/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/test_impress_area.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/test_main.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/PyProjectJZY.iml" afterPath="$PROJECT_DIR$/.idea/PyProjectJZY.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/__init__.py" />
       <change beforePath="$PROJECT_DIR$/data_structrue/chain_list/chain_list_main.py" afterPath="$PROJECT_DIR$/data_structrue/chain_list/chain_list_main.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" />
       <change beforePath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" afterPath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" />
-      <change beforePath="$PROJECT_DIR$/globalconfig.py" afterPath="$PROJECT_DIR$/globalconfig.py" />
+      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,15 +25,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PyProjectJZY$main.coverage" NAME="main Coverage Results" MODIFIED="1595054653183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyProjectJZY$main.coverage" NAME="main Coverage Results" MODIFIED="1595232346130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="chain_list_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_structrue/chain_list/chain_list_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="80" column="8" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+            <state relative-caret-position="286">
+              <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -37,30 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eye.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/receiver/eye.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="fast_tree_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="468">
               <caret line="30" column="51" lean-forward="false" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
@@ -69,22 +53,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="compare1" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/book/compare/compare1">
+      <file leaf-file-name="impress_main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inner_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/inner_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="104">
+              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,41 +68,71 @@
       <file leaf-file-name="simple_node_chain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="189">
+              <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simple_node_chain_node.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
+      <file leaf-file-name="impress_main_page.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
+            <state relative-caret-position="286">
+              <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globalconfig.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/globalconfig.py">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fast_chain.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-134">
-              <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="26">
+              <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="threading.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files/Python35/Lib/threading.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="825" column="8" lean-forward="false" selection-start-line="825" selection-start-column="8" selection-end-line="825" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <element signature="e#0#70#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_impress_area.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_impress_area.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,11 +164,16 @@
       <find>FFF</find>
       <find>西</find>
       <find>g.sleep_symbol</find>
-      <find>print</find>
       <find>add_weight_number</find>
       <find>fn_max_pool_deepth</find>
       <find>desire_point</find>
       <find>lose_weight_number</find>
+      <find>super.__init__</find>
+      <find>is_empty_row</find>
+      <find>tmp_row</find>
+      <find>self.area</find>
+      <find>print</find>
+      <find>''</find>
     </findStrings>
     <replaceStrings>
       <replace>SimpleNodeChain</replace>
@@ -178,6 +189,7 @@
       <replace>g_fn_add_weight_number</replace>
       <replace>g_fn_max_pool_deepth</replace>
       <replace>g_ps_desire_point</replace>
+      <replace>tmp_row_index</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -189,8 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data_structrue/__init__.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/receiver/eye.py" />
         <option value="$PROJECT_DIR$/receiver/local_reader/local_reader_utils.py" />
         <option value="$PROJECT_DIR$/data_structrue/node_base.py" />
@@ -202,11 +212,18 @@
         <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" />
         <option value="$PROJECT_DIR$/book/entity.txt" />
         <option value="$PROJECT_DIR$/book/compare/compare1" />
-        <option value="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" />
         <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" />
         <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" />
         <option value="$PROJECT_DIR$/globalconfig.py" />
+        <option value="$PROJECT_DIR$/data_structrue/__init__.py" />
+        <option value="$PROJECT_DIR$/test_main.py" />
         <option value="$PROJECT_DIR$/data_structrue/chain_list/chain_list_main.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/data_structrue/impress_area/__init__.py" />
+        <option value="$PROJECT_DIR$/test_impress_area.py" />
+        <option value="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" />
+        <option value="$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py" />
+        <option value="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" />
       </list>
     </option>
   </component>
@@ -243,7 +260,7 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>Python</id>
+            <id>PyUnresolvedReferencesInspection</id>
           </State>
         </selected-state>
       </profile-state>
@@ -282,12 +299,30 @@
             </path>
             <path>
               <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
+              <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
+              <item name="chain_list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
+              <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
+              <item name="fast_tree" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
+              <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
+              <item name="impress_area" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.5 (PyProjectJZY) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="&lt; Python 3.5 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -306,12 +341,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/book/compare" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\MyProject\PyProjectJZY\Project FES\提交审核" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProject\PyProjectJZY\data_structrue\impress_area" />
+      <recent name="D:\MyProject\PyProjectJZY" />
       <recent name="D:\MyProject\PyProjectJZY\Project FES\提交审核" />
       <recent name="C:\Users\25245\PycharmProjects\ASDF\book\compare" />
       <recent name="D:\MyProject\PyProjectJZY\book\math" />
@@ -404,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595052778625</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2020 7 17">
+      <created>1595062313894</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595062313894</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -474,9 +519,9 @@
     <MESSAGE value="2020 7 14" />
     <MESSAGE value="2020 7 15" />
     <MESSAGE value="1111" />
-    <MESSAGE value="2020 7 17" />
     <MESSAGE value="2020 7 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020 7 18" />
+    <MESSAGE value="2020 7 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020 7 17" />
   </component>
   <component name="WindowStateProjectService">
     <state x="694" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594821284228">
@@ -515,56 +560,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/node_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globalconfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book/compare/compare1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/receiver/local_reader/number_receiver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#35#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -632,6 +627,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -723,14 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Python35/Lib/shelve.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -742,6 +732,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -855,22 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -905,16 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="51" lean-forward="false" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/globalconfig.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -923,10 +888,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python35/Lib/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="825" column="8" lean-forward="false" selection-start-line="825" selection-start-column="8" selection-end-line="825" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_impress_area.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="30" column="51" lean-forward="false" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/chain_list/chain_list_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="80" column="8" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+        <state relative-caret-position="286">
+          <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
