@@ -11,12 +11,10 @@ class ImpressMain(ImpressMainPage):
         simple_node_chain = SimpleNodeChain()
         simple_node_chain.on_data_enter("天周日天气不错")
         self.add_simple_node_chain(simple_node_chain)
-        #self.print_page()
 
         simple_node_chain = SimpleNodeChain()
         simple_node_chain.on_data_enter("图星期天天气不错")
         self.add_simple_node_chain(simple_node_chain)
-        #self.print_page()
 
         self.compare()
 
@@ -48,7 +46,6 @@ class ImpressMain(ImpressMainPage):
         unit_tail_list = self.result_arr[self.last_chain_index+1]
         for unit_head in unit_head_list:
             for unit_tail in unit_tail_list:
-                print(unit_head,unit_tail)
                 if(unit_tail[1]-unit_head[1]==1 and unit_tail[0]-unit_head[0]==1):
                     source_row[unit_head[0]][2]=1
                     source_row[unit_tail[0]][2] = 1
@@ -63,7 +60,8 @@ class ImpressMain(ImpressMainPage):
         if(len(tmp_arr)<2):
             return
         source_row,compare_row = tmp_arr[0],tmp_arr[1]
-
+        g.p("im","source_row:"+source_row.__str__())
+        g.p("im","compare_row:" + compare_row.__str__())
         while True:
             r = self.compare_unit(source_row,compare_row)
             if(r==False):
@@ -71,7 +69,6 @@ class ImpressMain(ImpressMainPage):
 
         if(len(self.result_arr)<2):
             return
-        print(self.result_arr)
 
         while True:
             r = self.chain_neighbor_unit(source_row,compare_row)
@@ -83,9 +80,44 @@ class ImpressMain(ImpressMainPage):
         source_tail = self.mark_tail(source_row)
         compare_tail = self.mark_tail(compare_row)
         body = self.mark_body(source_row)
+        g.p("im", "head:" + source_head.__str__())
+        g.p("im", "body:" + body.__str__())
+        g.p("im", "tail:" + source_tail.__str__())
         self.save_to_brain([source_head,compare_head],body,[source_tail,compare_tail])
 
     def save_to_brain(self,source_list,body,tail_list):
+        head_node = MemoryNode()
+        for i in range(len(source_list)):
+            source_unit = source_list[i]
+            str1 = ""
+            for uunit in source_unit:
+                str1 = str1+uunit[0]
+            if (str1 == ""):
+                continue
+            head_child = MemoryNode(str1)
+            head_node.add_node(head_child,MemoryEdge.EDGE_CONTAIN)
+            head_child.add_node(head_node,MemoryEdge.EDGE_RELATION)
+            mm.add_node(head_child)
+        tail_node = MemoryNode()
+        for i in range(len(tail_list)):
+            tail_unit = tail_list[i]
+            str1 = ""
+            for uunit in tail_unit:
+                str1 = str1 + uunit[0]
+            if(str1==""):
+                continue
+            tail_child = MemoryNode(str1)
+            tail_node.add_node(tail_child, MemoryEdge.EDGE_CONTAIN)
+            tail_child.add_node(head_node, MemoryEdge.EDGE_RELATION)
+            mm.add_node(tail_child)
+        str1 = ""
+        for uunit in body:
+            str1 = str1 + uunit[0]
+        body_node = MemoryNode(str1)
+        head_node.add_node(body_node)
+        body_node.add_node(tail_node)
+        mm.add_node(body_node)
+        #mm.say()
         pass
 
     def mark_tail(self,row):
@@ -126,3 +158,10 @@ class ImpressMain(ImpressMainPage):
             cnode = cnode.get_next_node()
         self.set_next_row()
 
+    def add_inner_data(self,inner_data:InnerData):
+        self.clear_column_index()
+        row = self.get_row()
+        value = inner_data.value
+        self.add_simple_node_chain(inner_data.value)
+
+im = ImpressMain()

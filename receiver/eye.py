@@ -13,8 +13,9 @@ class Eye(Thread):
         for i in range(len(value)):
             self.queue.put(value[i])
             time.sleep(0.1)
-        time.sleep(1)
+
         self.queue.put("\n")
+        time.sleep(3)
         self.queue.put(g.sleep_symbol)
 
 

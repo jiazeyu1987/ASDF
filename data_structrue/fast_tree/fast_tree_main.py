@@ -24,10 +24,14 @@ class FastTree(Thread):
         fast_chain = FastChain(chain,self.map)
         self.pool.append(fast_chain)
         chain1 = self.get_result_of_compare_fast_chain()
+        if (chain1 == None):
+            return
         if (chain1.head == g.replace_symbol and chain1.head.get_next_node == None):
             return
         else:
-            inner_data = InnerData(InnerData.FAST_TREE,chain)
+            inner_data = InnerData(InnerData.FAST_TREE,chain1)
+            g.p("ft","enter:"+chain.__str__())
+            g.p("ft","got:"+chain1.__str__())
             self.inner_message_queue.put(inner_data)
 
     def get_result_of_compare_fast_chain(self):

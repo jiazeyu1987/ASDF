@@ -1,28 +1,39 @@
 import data_structrue as ds
-from .. import InnerData
+from data_structrue import InnerData
 import globalconfig as g
-# 省略了信息源问题
 from threading import Thread, Event
-class ChainListMain(Thread):
-    def __init__(self, inner_message_queue,fast_tree):
+from queue import Queue
+class D1ChainList(Thread):
+    def __init__(self, inner_message_queue:Queue,fast_tree,exception_queue:Queue):
         Thread.__init__(self)
         self.inner_message_queue = inner_message_queue
         self.block_timeout = 1
         self.fast_tree= fast_tree
+        self.exception_queue = exception_queue
         self.chain_list = []
+        self._search_index = -1
+        self.message_cache = []
 
 
     def run(self):
-        while True:
-            try:
+        import sys,queue
+        try:
+            while True:
                 inner_data  = self.inner_message_queue.get(True,self.block_timeout)
+
+                self.message_cache.append(inner_data)
+                if(len(self.message_cache)>g.g_d1c_max_search_depth):
+                    self.message_cache.pop(0)
+
                 if(inner_data.value==g.sleep_symbol):
                     self.fast_tree.end_thread()
                     return
                 else:
                     self.addItem(inner_data)
-            except Exception:
-                pass
+        except queue.Empty:
+            g.main = False
+        except Exception:
+            self.exception_queue.put(sys.exc_info())
 
     # 获取了一条新的信息
     # 获取到的新的信息可能有以下几个可能
@@ -44,13 +55,59 @@ class ChainListMain(Thread):
                 对比陈述句的不同处可能在开头，可能在中间，可能在结尾
     '''
     def addItem(self,inner_data:InnerData):
+        g.p("d1c", inner_data.__str__())
         if(inner_data.source == InnerData.OUTER_SEE):
             self.fast_tree.add_simple_node_chain(inner_data.value)
             self.chain_list.append(inner_data.value)
         elif(inner_data.source == InnerData.FAST_TREE):
-            print(inner_data.value)
             if(g.g_ps_desire_point<5):
-                pass
+                self.on_fast_data(inner_data)
+
+
+
+    def on_fast_data(self,inner_data):
+        self.clear_search_index()
+        b1 = self.location_inner_data(inner_data)
+        if(b1==False):
+            return
+
+        while True:
+            b2 = self.location_inner_type(InnerData.OUTER_SEE)
+            if(b2):
+                ds.im.add_inner_data(inner_data)
+                ds.im.add_inner_data(self.message_cache[self._search_index+1])
+                ds.im.compare()
+                return
+
+    def clear_search_index(self):
+        self._search_index = -1
+
+    def location_inner_data(self,idata):
+        if (self._search_index * -1 == len(self.message_cache) + 1):
+            return False
+        for i in range(g.g_d1c_max_search_depth):
+            v = (self.message_cache[self._search_index].source)
+            if(self.message_cache[self._search_index]==idata):
+                self._search_index-=1
+                return True
+            else:
+                self._search_index-=1
+                if (self._search_index * -1 == len(self.message_cache) + 1):
+                    return False
+        return False
+
+    def location_inner_type(self,data_type):
+        if (self._search_index * -1 == len(self.message_cache) + 1):
+            return False
+        for i in range(g.g_d1c_max_search_depth):
+            if(self.message_cache[self._search_index].source==data_type):
+                self._search_index-=1
+                return True
+            else:
+                self._search_index-=1
+                if (self._search_index * -1 == len(self.message_cache) + 1):
+                    return False
+        return False
 
     '''
         *消息流的特点*

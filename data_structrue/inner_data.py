@@ -7,3 +7,6 @@ class InnerData:
     def __init__(self,source,value):
         self.value = value
         self.source = source
+
+    def __str__(self):
+        return self.value.__str__()

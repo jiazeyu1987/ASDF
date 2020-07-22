@@ -1,3 +1,21 @@
+main = True
+
+'''
+    Print Relation
+'''
+log_map = {}
+log_map["im"] =1
+log_map["d1c"] =0
+log_map["ft"] =0
+log_map["nr"] = 0
+def p(title,message):
+    if(title in log_map):
+        if(log_map[title]==1):
+            print(message)
+
+'''
+    Read Relation
+'''
 time_gap = {}
 time_gap_symbol = "墼"
 sleep_symbol = "㮟"
@@ -23,3 +41,13 @@ g_fn_add_weight_number = 1
 g_fn_lose_weight_number = 1
 g_fn_max_pool_deepth = 2
 g_fn_search_depth = 5
+
+'''
+    D1Chainlist
+'''
+g_d1c_max_search_depth = 20
+
+'''
+    Memory
+'''
+g_mm_empty_symbol = "瀔"

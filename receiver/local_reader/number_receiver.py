@@ -43,6 +43,7 @@ class NumberReceiver(Thread):
         判断接收到的内容是eye看到的字符，还是无聊代码
     '''
     def addItem(self,char_val):
+        g.p("nr","enter:"+char_val)
         if(char_val!=g.time_gap_symbol):
             self.awake(char_val)
         else:
@@ -88,13 +89,14 @@ class NumberReceiver(Thread):
 
 
     def submit(self,value1):
-        #print(self.char_array)
+        g.p("nr","submit:"+value1.__str__())
         nn = change_array_to_str(value1)
         new_str = change_raw_string_to_gap_string(nn)
         val1,rest = split_gap_string_by_gap_number(new_str,1)
         while True:
             simple_node_chain = SimpleNodeChain()
             simple_node_chain.on_data_enter(val1)
+            g.p("nr", "put in queue:" + simple_node_chain.__str__())
             self.inner_message_queue.put(InnerData(InnerData.OUTER_SEE,simple_node_chain))
             if(len(rest)>0):
                 val1, rest = split_gap_string_by_gap_number(rest, 1)
