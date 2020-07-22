@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8bccdad-5289-4a54-a9ad-cae6dc55cba0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/book/adj" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/log.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/memory_area/memory_area.vsd" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/memory_area/memory_edge.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/memory_area/memory_node.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/book/compare/compare1" afterPath="$PROJECT_DIR$/book/compare/compare1" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/chain_list/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/chain_list/chain_list_main.py" afterPath="$PROJECT_DIR$/data_structrue/d1chainlist.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/cmd/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/memory_area/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/edge_base.py" afterPath="$PROJECT_DIR$/data_structrue/edge_base.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" afterPath="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/inner_data.py" afterPath="$PROJECT_DIR$/data_structrue/inner_data.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/sound_tree/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/memory_area/memory_main.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/sound_tree/sound_tree_main.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/globalconfig.py" afterPath="$PROJECT_DIR$/globalconfig.py" />
-      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="$PROJECT_DIR$/receiver/eye.py" afterPath="$PROJECT_DIR$/receiver/eye.py" />
-      <change beforePath="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" afterPath="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" />
-      <change beforePath="$PROJECT_DIR$/test_main.py" afterPath="$PROJECT_DIR$/test_main.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/memory_area/memory_area.vsd" afterPath="$PROJECT_DIR$/data_structrue/memory_area/memory_area.vsd" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -499,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595233463400</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2020 7 20">
+      <created>1595407457329</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1595407457329</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -766,6 +753,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -774,6 +762,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47">
           <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
