@@ -2,8 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8bccdad-5289-4a54-a9ad-cae6dc55cba0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/1/action.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/1/address.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/1/address_plus.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/1/adf.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/1/advance_adf.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/1/number.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/book/1/number_plus.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/guess1.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/stupid_tree/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/stupid_tree/stupid_edge.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/book/entity.txt" afterPath="$PROJECT_DIR$/book/1/entity.txt" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/d1chainlist.py" afterPath="$PROJECT_DIR$/data_structrue/d1chainlist.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/edge_base.py" afterPath="$PROJECT_DIR$/data_structrue/edge_base.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" afterPath="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" />
       <change beforePath="$PROJECT_DIR$/data_structrue/memory_area/memory_area.vsd" afterPath="$PROJECT_DIR$/data_structrue/memory_area/memory_area.vsd" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/node_base.py" afterPath="$PROJECT_DIR$/data_structrue/node_base.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" afterPath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" />
+      <change beforePath="$PROJECT_DIR$/globalconfig.py" afterPath="$PROJECT_DIR$/globalconfig.py" />
+      <change beforePath="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" afterPath="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,25 +39,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PyProjectJZY$main.coverage" NAME="main Coverage Results" MODIFIED="1595321632797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyProjectJZY$main.coverage" NAME="main Coverage Results" MODIFIED="1595562304130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="d1chainlist.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/d1chainlist.py">
+      <file leaf-file-name="stupid_edge.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupid_edge.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fast_tree_main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="215">
+              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -40,84 +55,94 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adj" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/book/adj">
+      <file leaf-file-name="entity.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book/1/entity.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="impress_main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main.py">
+      <file leaf-file-name="adf.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book/1/adf.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1352">
-              <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="29" />
+            <state relative-caret-position="702">
+              <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="number.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book/1/number.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="number_plus.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book/1/number_plus.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="address.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book/1/address.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="address_plus.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book/1/address_plus.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advance_adf.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/book/1/advance_adf.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="action.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/book/1/action.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stupid_node.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fast_chain.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fast_edge.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fast_node.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="globalconfig.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/globalconfig.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="memory_main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/memory_area/memory_main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eye.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/receiver/eye.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -133,21 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tree1</find>
-      <find>Edge1</find>
-      <find>Node1</find>
-      <find>asleep</find>
-      <find>queue</find>
-      <find>gap_string</find>
-      <find>chainlist</find>
-      <find>submit</find>
-      <find>add_simple_node_chain</find>
-      <find>OUTER</find>
-      <find>FFF</find>
-      <find>西</find>
-      <find>g.sleep_symbol</find>
-      <find>add_weight_number</find>
-      <find>fn_max_pool_deepth</find>
       <find>desire_point</find>
       <find>lose_weight_number</find>
       <find>super.__init__</find>
@@ -161,8 +171,23 @@
       <find>mark_tail</find>
       <find>mark_head</find>
       <find>last_chain_index</find>
+      <find>compare_unit</find>
+      <find>chain_neighbor_unit</find>
+      <find>mark_body</find>
       <find>release_fast_chain</find>
+      <find>def add_weight</find>
+      <find>g_fn_add_weight_number</find>
+      <find>fast_chain</find>
       <find>lose_weight</find>
+      <find>fast_node</find>
+      <find>lose_all_weight</find>
+      <find>current_fast_node</find>
+      <find>KKKK</find>
+      <find>add_compare_data</find>
+      <find>message_cache</find>
+      <find>compare</find>
+      <find>我有一个</find>
+      <find>，</find>
     </findStrings>
     <replaceStrings>
       <replace>SimpleNodeChain</replace>
@@ -180,29 +205,26 @@
       <replace>g_ps_desire_point</replace>
       <replace>d1chain_list</replace>
       <replace>tmp_row_index</replace>
+      <replace>个，</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/receiver/local_reader/number_receiver.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/receiver/local_reader/local_reader_utils.py" />
-        <option value="$PROJECT_DIR$/data_structrue/node_base.py" />
         <option value="$PROJECT_DIR$/data_structrue/fast_tree/__init__.py" />
         <option value="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py" />
-        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py" />
-        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" />
         <option value="$PROJECT_DIR$/book/entity.txt" />
-        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" />
         <option value="$PROJECT_DIR$/data_structrue/chain_list/chain_list_main.py" />
         <option value="$PROJECT_DIR$/data_structrue/impress_area/__init__.py" />
         <option value="$PROJECT_DIR$/test_impress_area.py" />
-        <option value="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" />
         <option value="$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py" />
         <option value="$PROJECT_DIR$/data_structrue/chain_list/__init__.py" />
         <option value="$PROJECT_DIR$/data_structrue/chain_list/d2chainlist.py" />
@@ -212,18 +234,36 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/test_main.py" />
         <option value="$PROJECT_DIR$/data_structrue/memory_area/__init__.py" />
-        <option value="$PROJECT_DIR$/data_structrue/__init__.py" />
-        <option value="$PROJECT_DIR$/data_structrue/edge_base.py" />
         <option value="$PROJECT_DIR$/data_structrue/memory_area/memory_edge.py" />
         <option value="$PROJECT_DIR$/data_structrue/memory_area/memory_node.py" />
         <option value="$PROJECT_DIR$/data_structrue/memory_area/memory_main.py" />
-        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" />
+        <option value="$PROJECT_DIR$/receiver/eye.py" />
+        <option value="$PROJECT_DIR$/data_structrue/guess1.py" />
+        <option value="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" />
+        <option value="$PROJECT_DIR$/globalconfig.py" />
+        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py" />
+        <option value="$PROJECT_DIR$/data_structrue/edge_base.py" />
+        <option value="$PROJECT_DIR$/data_structrue/node_base.py" />
+        <option value="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" />
+        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" />
         <option value="$PROJECT_DIR$/data_structrue/d1chainlist.py" />
         <option value="$PROJECT_DIR$/book/compare/compare1" />
-        <option value="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" />
-        <option value="$PROJECT_DIR$/receiver/eye.py" />
-        <option value="$PROJECT_DIR$/globalconfig.py" />
-        <option value="$PROJECT_DIR$/data_structrue/impress_area/impress_main.py" />
+        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" />
+        <option value="$PROJECT_DIR$/data_structrue/__init__.py" />
+        <option value="$PROJECT_DIR$/data_structrue/stupid_tree/__init__.py" />
+        <option value="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" />
+        <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" />
+        <option value="$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py" />
+        <option value="$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py" />
+        <option value="$PROJECT_DIR$/data_structrue/stupid_tree/stupid_edge.py" />
+        <option value="$PROJECT_DIR$/book/1/entity.txt" />
+        <option value="$PROJECT_DIR$/book/1/adf.txt" />
+        <option value="$PROJECT_DIR$/book/1/number.txt" />
+        <option value="$PROJECT_DIR$/book/1/number_plus.txt" />
+        <option value="$PROJECT_DIR$/book/1/address.txt" />
+        <option value="$PROJECT_DIR$/book/1/address_plus.txt" />
+        <option value="$PROJECT_DIR$/book/1/advance_adf.txt" />
+        <option value="$PROJECT_DIR$/book/1/action.txt" />
       </list>
     </option>
   </component>
@@ -303,6 +343,12 @@
               <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
               <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
               <item name="compare" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -320,13 +366,19 @@
               <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
               <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
-              <item name="impress_area" type="462c0819:PsiDirectoryNode" />
+              <item name="memory_area" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
               <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
-              <item name="memory_area" type="462c0819:PsiDirectoryNode" />
+              <item name="simple_node_chain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
+              <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
+              <item name="stupid_tree" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
@@ -367,13 +419,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProject\PyProjectJZY\book\1" />
+      <recent name="D:\MyProject\PyProjectJZY\data_structrue\stupid_tree" />
       <recent name="D:\MyProject\PyProjectJZY\book" />
       <recent name="D:\MyProject\PyProjectJZY\data_structrue\memory_area" />
       <recent name="D:\MyProject\PyProjectJZY\data_structrue" />
-      <recent name="D:\MyProject\PyProjectJZY\data_structrue\chain_list" />
-      <recent name="D:\MyProject\PyProjectJZY\data_structrue\impress_area" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyProject\PyProjectJZY\book\1" />
       <recent name="D:\MyProject\PyProjectJZY\data_structrue" />
       <recent name="D:\MyProject\PyProjectJZY\Project FES\提交审核" />
     </key>
@@ -486,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595407457329</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="2020 7 20">
+      <created>1595407485656</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1595407485656</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -506,11 +566,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.510661" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.48933902" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.48933902" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -520,7 +581,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -563,10 +623,37 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_structrue/d1chainlist.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_structrue/d1chainlist.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_structrue/d1chainlist.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_structrue/d1chainlist.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="122" />
+      <option name="time" value="138" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -576,128 +663,19 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/receiver/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/receiver/local_reader/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book/sound.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1077">
-          <caret line="3860" column="6" lean-forward="true" selection-start-line="3860" selection-start-column="6" selection-end-line="3860" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/buildin/buildin_timegap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/buildin/buildin_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book/math/number_sound.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="81" lean-forward="false" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book/math/number.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="true" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python35/Lib/shelve.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="103" column="8" lean-forward="false" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/buildin/buildin_read_entity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_edge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/receiver/local_reader/local_reader_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book/entity.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Project FES/FES 1.1.5 升级文档 .txt" />
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Python35/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="825" column="8" lean-forward="false" selection-start-line="825" selection-start-column="8" selection-end-line="825" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -708,6 +686,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="168" column="4" lean-forward="false" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -715,14 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/inner_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -763,7 +734,7 @@
         <state relative-caret-position="47">
           <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -786,52 +757,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/node_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/edge_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/memory_area/memory_edge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/memory_area/memory_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,26 +780,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book/compare/compare1">
+    <entry file="file://$PROJECT_DIR$/receiver/eye.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="338">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/adj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#16#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/globalconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/node_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/edge_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/inner_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/receiver/local_reader/number_receiver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2730">
-          <caret line="111" column="87" lean-forward="false" selection-start-line="111" selection-start-column="87" selection-end-line="111" selection-end-column="87" />
+        <state relative-caret-position="177">
+          <caret line="100" column="49" lean-forward="false" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/receiver/eye.py">
+    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="302">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/guess1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/compare/compare1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="69" column="39" lean-forward="false" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="61" column="22" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/memory_area/memory_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="34" column="34" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="34" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -882,70 +936,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/globalconfig.py">
+    <entry file="file://$PROJECT_DIR$/data_structrue/memory_area/memory_edge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="474">
+          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/d1chainlist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/impress_area/impress_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1352">
-          <caret line="53" column="29" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="29" />
+        <state relative-caret-position="1092">
+          <caret line="63" column="31" lean-forward="false" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_edge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/book/adj">
+    <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupid_edge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/entity.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/adf.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/number.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/number_plus.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/address.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="31" column="3" lean-forward="false" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/address_plus.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/advance_adf.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book/1/action.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
           <folding />
         </state>
       </provider>

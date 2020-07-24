@@ -4,22 +4,23 @@ class FastNode(NodeBase):
     def __init__(self,value):
         super().__init__(value)
         self.follow_edge_map = {}
+        self.strong = 0
 
 
-    def add_node(self,node1):
+    def add_node(self,node1,edge_weight):
         from . import FastEdge
+        flag = False
         if(node1.value in self.follow_edge_map):
-            self.follow_edge_map[node1.value].add_weight()
+            self.follow_edge_map[node1.value].add_weight(edge_weight)
+            if(node1.strong>0 and self.follow_edge_map[node1.value].strong>0):
+                flag = True
         else:
             edge = FastEdge(self, node1)
-            edge.add_weight()
+            edge.add_weight(edge_weight)
             self.follow_edge_map[node1.value] = edge
-        return self.follow_edge_map[node1.value]
+        return self.follow_edge_map[node1.value],flag
 
-    def is_strong_enough(self):
-        return self.strong>1+g.g_fn_add_weight_number
-
-
-    def lose_weight(self):
-        if(self.strong>1):
-            self.strong-=1
+    def lose_all_weight(self,weight):
+        self.strong-=weight
+        for edge in self.follow_edge_map:
+            self.follow_edge_map[edge].lose_weight(weight)

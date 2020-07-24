@@ -16,33 +16,46 @@ class FastTree(Thread):
         self.pool = []
 
         self.map = {}
+        self.map_compare = {}
+        self.stupid_tree = StupidTree()
+        self.add_weight_1 = 10
+        self.lose_weight_1 = 2
+        self.lose_weight_2 = 50
+        self.add_weight_2 = 99
 
     #入口，同时也是出口，向消息队列提供相似信息
     #返回值为InnerData，source 为InnerData.FastTree，value为SimpleNodeChain
     #add node weight not edge weight
     def add_simple_node_chain(self,chain:SimpleNodeChain):
-        fast_chain = FastChain(chain,self.map)
+        fast_chain = FastChain(chain,self.map,self.add_weight_1)
         self.pool.append(fast_chain)
-        chain1 = self.get_result_of_compare_fast_chain()
-        if (chain1 == None):
-            return
-        if (chain1.head == g.replace_symbol and chain1.head.get_next_node == None):
-            return
-        else:
-            inner_data = InnerData(InnerData.FAST_TREE,chain1)
-            g.p("ft","enter:"+chain.__str__())
-            g.p("ft","got:"+chain1.__str__())
+        print(fast_chain.repeat_node_chain)
+        if fast_chain.repeat_node_chain!=None:
+            inner_data = InnerData(InnerData.FAST_TREE, fast_chain.repeat_node_chain)
             self.inner_message_queue.put(inner_data)
 
-    def get_result_of_compare_fast_chain(self):
-        if(len(self.pool)<2):
-            return
-        if(len(self.pool)>g.g_fn_max_pool_deepth):
-            chain0=self.pool.pop(0)
-            chain0.release_fast_chain()
-        last_chain = self.pool[-1]
-        chain1 = last_chain.get_fast_compare_result()
-        return chain1
+        self.lose_all_weight(self.lose_weight_1,self.map)
+
+
+    def add_compare_data(self,inner_data:InnerData,messagelist):
+        self.map_compare = {}
+        fast_chain = FastChain(inner_data.value, self.map_compare, self.add_weight_2)
+        for i in range(20):
+            if(i>len(messagelist)-1):
+                break
+            message = messagelist[(i+1)*-1]
+            if (message.source == InnerData.OUTER_SEE):
+                arr,has_flag = fast_chain.compare(message.value,self.map_compare)
+                if(has_flag):
+                    for item in arr:
+                        self.stupid_tree.add_value(item[0])
+        self.stupid_tree.say()
+
+
+    def lose_all_weight(self,weight,map1):
+        for key in map1:
+            map1.get(key).lose_all_weight(weight)
+
 
 
 

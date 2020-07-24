@@ -3,6 +3,7 @@ from data_structrue import InnerData
 import globalconfig as g
 from threading import Thread, Event
 from queue import Queue
+from . import *
 class D1ChainList(Thread):
     def __init__(self, inner_message_queue:Queue,fast_tree,exception_queue:Queue):
         Thread.__init__(self)
@@ -19,8 +20,7 @@ class D1ChainList(Thread):
         import sys,queue
         try:
             while True:
-                inner_data  = self.inner_message_queue.get(True,self.block_timeout)
-
+                inner_data  = self.inner_message_queue.get(True)
                 self.message_cache.append(inner_data)
                 if(len(self.message_cache)>g.g_d1c_max_search_depth):
                     self.message_cache.pop(0)
@@ -61,23 +61,9 @@ class D1ChainList(Thread):
             self.chain_list.append(inner_data.value)
         elif(inner_data.source == InnerData.FAST_TREE):
             if(g.g_ps_desire_point<5):
-                self.on_fast_data(inner_data)
+                self.fast_tree.add_compare_data(inner_data, self.message_cache)
 
 
-
-    def on_fast_data(self,inner_data):
-        self.clear_search_index()
-        b1 = self.location_inner_data(inner_data)
-        if(b1==False):
-            return
-
-        while True:
-            b2 = self.location_inner_type(InnerData.OUTER_SEE)
-            if(b2):
-                ds.im.add_inner_data(inner_data)
-                ds.im.add_inner_data(self.message_cache[self._search_index+1])
-                ds.im.compare()
-                return
 
     def clear_search_index(self):
         self._search_index = -1

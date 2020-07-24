@@ -9,6 +9,18 @@ class SimpleNodeChain:
     def get_head(self)->SimpleNodeChainNode:
         return self.head
 
+    def add_zhanwei_node(self):
+        if(self.head==None):
+            self.head = SimpleNodeChainNode(g.replace_symbol)
+            self.current_node = self.head
+        else:
+            if(self.current_node.value == g.replace_symbol):
+                return
+            else:
+                new_node = self.new(g.replace_symbol)
+                self.link(self.current_node, new_node)
+                self.current_node = new_node
+
     #从receiver/eye异步接收到的数据
     def on_data_enter(self,char_str):
         # start_index = -1

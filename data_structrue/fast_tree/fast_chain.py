@@ -3,30 +3,39 @@ from . import FastNode,FastEdge
 import globalconfig as g
 class FastChain:
     FAST_CHAIN_ID = 1
-    def __init__(self,chain:SimpleNodeChain,map1):
+    def __init__(self,chain:SimpleNodeChain,map1,add_weight = g.g_fn_add_weight_number):
         self.id = FastChain.FAST_CHAIN_ID
         FastChain.FAST_CHAIN_ID+=1
         self.edgelist = []
-        self._get_chain(chain,map1)
+        self.repeat_node_chain = SimpleNodeChain()
+        self._get_chain(chain,map1,add_weight)
 
-    def _get_chain(self,chain:SimpleNodeChain,map1):
+    def _get_chain(self,chain:SimpleNodeChain,map1,add_weight):
        current_fast_node = None
        current_chain_node = chain.head
+       has_repeat_flag = False
        while True:
            if(current_chain_node!=None):
                char1 = current_chain_node.value
                if (char1 in map1):
-                   map1[char1].strong += g.g_fn_add_weight_number
+                   map1[char1].strong += add_weight
                else:
                    map1[char1] = FastNode(char1)
-                   map1[char1].strong += g.g_fn_add_weight_number
+                   map1[char1].strong += add_weight
                fast_node = map1[char1]
                if(current_fast_node!=None):
-                    edge = current_fast_node.add_node(fast_node)
+                    edge,flag = current_fast_node.add_node(fast_node,add_weight)
                     self.edgelist.append(edge)
+                    if(flag):
+                        has_repeat_flag = True
+                        if(self.repeat_node_chain.head==None or self.repeat_node_chain.current_node.value==g.replace_symbol):
+                            self.repeat_node_chain.enter_node_val(current_fast_node.value)
+                        self.repeat_node_chain.enter_node_val(fast_node.value)
+                    else:
+                        self.repeat_node_chain.add_zhanwei_node()
                else:
                    edge = FastEdge(None, fast_node)
-                   edge.add_weight()
+                   edge.add_weight(add_weight)
                    self.edgelist.append(edge)
 
                current_fast_node = fast_node
@@ -34,28 +43,64 @@ class FastChain:
            else:
                break
 
+       if(has_repeat_flag==False):
+           self.repeat_node_chain = None
 
-    def get_fast_compare_result(self):
-        chain = SimpleNodeChain()
-        simple_current = None
-        for edge in self.edgelist:
-            node_to = edge.node_to
-            if(node_to.is_strong_enough()):
-                simple_tmp = SimpleNodeChainNode(node_to.value)
-            else:
-                simple_tmp = SimpleNodeChainNode(g.replace_symbol)
-                if(simple_current!=None and simple_current.value==g.replace_symbol):
-                    continue
-            if(simple_current==None):
-                chain.head = simple_tmp
-            else:
-                simple_edge = SimpleNodeChainEdge(simple_current, simple_tmp)
-                if(simple_current.value!=g.replace_symbol and simple_tmp.value!=g.replace_symbol):
-                    simple_edge.strong = edge.strong
-                simple_current.add_edge(simple_edge)
-            simple_current = simple_tmp
-        return chain
 
+    def compare(self,chain:SimpleNodeChain,map1):
+        current_fast_node = None
+        current_chain_node = chain.head
+        arr = []
+        rev = -1
+        has_flag = False
+        edge1 = None
+        str1 = ""
+        while True:
+            if (current_chain_node != None):
+                char1 = current_chain_node.value
+                if (char1 in map1):
+                    pass
+                else:
+                    map1[char1] = FastNode(char1)
+                fast_node = map1[char1]
+                if (current_fast_node != None):
+                    edge, flag = current_fast_node.add_node(fast_node, 0)
+                    edge1 = edge
+                    if (flag):
+                        has_flag = True
+                        if(rev==-1):
+                            rev = 1
+                            str1 = str1 + edge.node_from.value
+                        elif(rev==0):
+                            arr.append([str1,0])
+                            str1 = edge.node_from.value
+                            rev = 1
+                        else:
+                            str1 = str1+edge.node_from.value
+                    else:
+                        if(rev==-1):
+                            rev = 0
+                            str1 = str1+edge.node_from.value
+                        elif (rev == 1):
+                            str1 = str1 + edge.node_from.value
+                            arr.append([str1, 1])
+                            str1 = ""
+                            rev = 0
+                        else:
+                            str1 = str1 + edge.node_from.value
+                else:
+                    pass
+                current_fast_node = fast_node
+                current_chain_node = current_chain_node.get_next_node()
+            else:
+                if (rev == 1):
+                    str1 = str1+edge1.node_to.value
+                    arr.append([str1, 1])
+                else:
+                    str1 = str1 + edge1.node_to.value
+                    arr.append([str1, 0])
+                break
+        return arr,has_flag
 
     def release_fast_chain(self):
         for edge in self.edgelist:

@@ -41,7 +41,7 @@ g_fn_add_weight_number = 1
 g_fn_lose_weight_number = 1
 g_fn_max_pool_deepth = 2
 g_fn_search_depth = 5
-
+g_fn_compare_big_weight_number = 99
 '''
     D1Chainlist
 '''

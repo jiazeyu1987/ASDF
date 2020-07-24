@@ -56,12 +56,13 @@ class ImpressMain(ImpressMainPage):
 
 
     def compare(self):
+        self.last_chain_index = 0
+        self.last_compare_index = 0
         tmp_arr = self.get_compare_row()
         if(len(tmp_arr)<2):
             return
         source_row,compare_row = tmp_arr[0],tmp_arr[1]
-        g.p("im","source_row:"+source_row.__str__())
-        g.p("im","compare_row:" + compare_row.__str__())
+
         while True:
             r = self.compare_unit(source_row,compare_row)
             if(r==False):
@@ -74,16 +75,40 @@ class ImpressMain(ImpressMainPage):
             r = self.chain_neighbor_unit(source_row,compare_row)
             if(r==False):
                 break
+        g.p("im", "source_row:" + source_row.__str__())
+        g.p("im", "compare_row:" + compare_row.__str__())
 
-        source_head = self.mark_head(source_row)
-        compare_head = self.mark_head(compare_row)
-        source_tail = self.mark_tail(source_row)
-        compare_tail = self.mark_tail(compare_row)
-        body = self.mark_body(source_row)
-        g.p("im", "head:" + source_head.__str__())
-        g.p("im", "body:" + body.__str__())
-        g.p("im", "tail:" + source_tail.__str__())
-        self.save_to_brain([source_head,compare_head],body,[source_tail,compare_tail])
+        self.mark(source_row)
+        self.mark(compare_row)
+
+        # source_head = self.mark_head(source_row)
+        # compare_head = self.mark_head(compare_row)
+        # source_tail = self.mark_tail(source_row)
+        # compare_tail = self.mark_tail(compare_row)
+        # body = self.mark_body(source_row)
+        # g.p("im", "head:" + source_head.__str__())
+        # g.p("im", "body:" + body.__str__())
+        # g.p("im", "tail:" + source_tail.__str__())
+        # self.save_to_brain([source_head,compare_head],body,[source_tail,compare_tail])
+
+    def mark(self,data_row):
+        arr = []
+        flag = -1
+        str1 = ""
+        for char in data_row:
+            if(flag==-1):
+                flag = char[2]
+                str1 = str1+char[0]
+            else:
+                if(flag!=char[2]):
+                    arr.append(str1)
+                    str1 = char[0]
+                    flag = char[2]
+                else:
+                    str1 = str1+char[0]
+        if(str1!=""):
+            arr.append(str1)
+        print(arr)
 
     def save_to_brain(self,source_list,body,tail_list):
         head_node = MemoryNode()
