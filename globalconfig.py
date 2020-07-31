@@ -20,7 +20,7 @@ time_gap = {}
 time_gap_symbol = "墼"
 sleep_symbol = "㮟"
 replace_symbol = "甈"
-entity_book_name = "./book/compare/compare1"
+entity_book_name = "./book/1/entity.txt"
 sound_book_name = "./book/sound.txt"
 number_book_name = "./book/math/number.txt"
 #单次处理的最大字符数

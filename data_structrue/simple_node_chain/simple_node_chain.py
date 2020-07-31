@@ -1,13 +1,91 @@
 from . import *
 import globalconfig as g
 class SimpleNodeChain:
-    def __init__(self):
+    def __init__(self,list1:list=None):
         self.head = None
         #current node
         self.current_node = None
+        if(list1!=None):
+            self.enter_node_list(list1)
 
     def get_head(self)->SimpleNodeChainNode:
         return self.head
+
+    def change_shape(self,node1:SimpleNodeChainNode,len1:int,replace_value:str):
+        replace_node = ReplaceNode(replace_value)
+        cnode = self.get_head()
+        replace_node = ReplaceNode(replace_value)
+        index = -1
+        if(cnode==node1):
+            edge = SimpleNodeChainEdge(replace_node, cnode)
+            replace_node.replace_edge = edge
+            self.head = replace_node
+            index = 0
+        while True:
+            if(cnode==None):
+                break
+            next_node = cnode.get_next_node()
+            if(index!=-1):
+                index+=1
+                if(index==len1):
+                    cnode.remove_edge()
+                    new_edge = SimpleNodeChainEdge(replace_node, next_node)
+                    replace_node.follow_edge = new_edge
+            if(next_node==node1):
+                cnode.replace_next_node(replace_node)
+                index=0
+            cnode = next_node
+
+
+    def find_compare(self,other_chain,start_node=None):
+        cnode = start_node
+        if(start_node==None):
+            cnode = self.head
+
+        tnode = other_chain.get_head()
+        max = 0
+        target_node = None
+        while True:
+            if(tnode.value==cnode.value):
+                rn = self.equal_chain_len(cnode,tnode)
+                if(rn>max):
+                    max = rn
+                    target_node = tnode
+
+            tnode = tnode.get_next_node()
+            if(tnode==None):
+                break
+        return max,target_node
+
+    def equal_chain_len(self,start_node,start_node2):
+        index = 0
+        cnode = start_node
+        tnode = start_node2
+        while True:
+            if (cnode.value != tnode.value):
+                return index
+            index+=1
+            cnode = cnode.get_next_node()
+            tnode = tnode.get_next_node()
+            if(cnode==None or tnode==None):
+                return index
+
+
+    def location_edge(self,edge):
+        cnode = self.get_head()
+        while True:
+            if(cnode==None):
+                break
+            next_node = cnode.get_next_node()
+            if(next_node == None):
+                break
+
+            nf = cnode.value==edge.node_from.value
+            tf = next_node.value==edge.node_to.value
+            if(nf and tf):
+                return cnode,next_node
+            cnode = next_node
+        return None,None
 
     def add_zhanwei_node(self):
         if(self.head==None):
@@ -21,24 +99,26 @@ class SimpleNodeChain:
                 self.link(self.current_node, new_node)
                 self.current_node = new_node
 
+
+    def compare(self,chain1):
+        from .. import FastChain
+        map_compare = {}
+        fast_chain = FastChain(self, map_compare, 5)
+        fast_chain1 = FastChain(chain1, map_compare, 5)
+        edgelist = fast_chain.edgelist
+        edgelist1 = fast_chain1.edgelist
+        print(fast_chain1.repeat_node_chain)
+        # e_arr = []
+        # for edge in edgelist:
+        #     if(edge.strong>5 and edge in edgelist1):
+        #         e_arr.append(edge)
+
+
+
+
+
     #从receiver/eye异步接收到的数据
     def on_data_enter(self,char_str):
-        # start_index = -1
-        # len1 = len(char_str)
-        # for i in range(len1):
-        #     char1 = char_str[i]
-        #     if (char1 == g.time_gap_symbol):
-        #         if(start_index!=-1):
-        #             val = char_str[start_index:i]
-        #             start_index = -1
-        #             self.enter_node_val(val)
-        #     else:
-        #         if(start_index==-1):
-        #             start_index = i
-        #         if(i==len1-1):
-        #             val = char_str[start_index:len1]
-        #             start_index = -1
-        #             self.enter_node_val(val)
         for char1 in char_str:
             self.enter_node_val(char1)
 
@@ -53,11 +133,15 @@ class SimpleNodeChain:
             if (index > 50):
                 break
             index += 1
-            str1 = str1 + tmp_node.value + " - "
+            str1 = str1 + tmp_node.get_value() + " - "
             if (tmp_node.follow_edge == None):
                 break
             tmp_node = tmp_node.follow_edge.node_to
         return str1
+
+    def enter_node_list(self,vallist:list):
+        for i in range(len(vallist)):
+            self.enter_node_val(vallist[i])
 
     def enter_node_val(self,val):
         if(self.head==None):
@@ -68,7 +152,27 @@ class SimpleNodeChain:
             self.link(self.current_node,new_node)
             self.current_node = new_node
 
+    def get_str(self):
+        current = self.get_head()
+        str1 = ""
+        while True:
+            if current==None:
+                break
+            str1 = str1+current.get_value()
+            current = current.get_next_node()
+        return str1
 
+    def get_key(self):
+        current = self.get_head()
+        str1 = ""
+        arr = []
+        while True:
+            if current == None:
+                break
+            str1 = str1 + current.get_value()
+            arr.append(current.get_value())
+            current = current.get_next_node()
+        return arr
 
 
     def link(self,node_from:SimpleNodeChainNode,node_to:SimpleNodeChainNode):

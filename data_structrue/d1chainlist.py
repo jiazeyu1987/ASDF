@@ -62,6 +62,9 @@ class D1ChainList(Thread):
         elif(inner_data.source == InnerData.FAST_TREE):
             if(g.g_ps_desire_point<5):
                 self.fast_tree.add_compare_data(inner_data, self.message_cache)
+        elif(inner_data.source==g.entity_book_name):
+            eh.do_exec(inner_data)
+
 
 
 

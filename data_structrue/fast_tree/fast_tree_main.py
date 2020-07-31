@@ -15,8 +15,8 @@ class FastTree(Thread):
 
         self.pool = []
 
-        self.map = {}
-        self.map_compare = {}
+        self.map = FastMap()
+        self.map_compare = FastMap()
         self.stupid_tree = StupidTree()
         self.add_weight_1 = 10
         self.lose_weight_1 = 2
@@ -38,7 +38,7 @@ class FastTree(Thread):
 
 
     def add_compare_data(self,inner_data:InnerData,messagelist):
-        self.map_compare = {}
+        self.map_compare = FastMap()
         fast_chain = FastChain(inner_data.value, self.map_compare, self.add_weight_2)
         for i in range(20):
             if(i>len(messagelist)-1):
@@ -52,9 +52,9 @@ class FastTree(Thread):
         self.stupid_tree.say()
 
 
-    def lose_all_weight(self,weight,map1):
-        for key in map1:
-            map1.get(key).lose_all_weight(weight)
+    def lose_all_weight(self,weight,map1:FastMap):
+        for key in map1.get_map():
+            map1.get_map().get(key).lose_all_weight(weight)
 
 
 

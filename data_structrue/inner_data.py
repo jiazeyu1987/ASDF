@@ -8,5 +8,9 @@ class InnerData:
         self.value = value
         self.source = source
 
+    from . import SimpleNodeChain
+    def get_value(self)->SimpleNodeChain:
+        return self.value
+
     def __str__(self):
         return self.value.__str__()

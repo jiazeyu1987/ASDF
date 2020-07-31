@@ -1,10 +1,28 @@
-import action as ac
+
 from queue import Queue
 import  queue
 import data_structrue as ds
 import globalconfig as g
 def test():
-    ac.init()
+    g.time_gap[","] = 1
+    g.time_gap["."] = 3
+    g.time_gap[";"] = 2
+    g.time_gap["，"] = 1
+    g.time_gap["；"] = 2
+    g.time_gap["。"] = 3
+    g.time_gap[" "] = 1
+    g.time_gap["\t"] = 3
+    g.time_gap["\n"] = 5
+    g.time_gap[','] = 1
+    g.time_gap['.'] = 3
+    g.time_gap[';'] = 2
+    g.time_gap['，'] = 1
+    g.time_gap['；'] = 2
+    g.time_gap['。'] = 3
+    g.time_gap[' '] = 1
+    g.time_gap['\t'] = 3
+    g.time_gap['\n'] = 5
+
     import receiver as rv
     out_string_queue = Queue()
     d1_message_queue = Queue()
