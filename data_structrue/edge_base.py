@@ -4,6 +4,8 @@ class EdgeBase:
     TYPE_REPLACE = 2
     TYPE_LINK_OUTER = 3
     TYPE_LINK_ACTION = 4
+    TYPE_BELONG = "belong"
+    TYPE_CONTAIN = "contain"
     EDGE_ID = 1
     def __init__(self,node_from,node_to,strong=0):
         self.node_from = node_from

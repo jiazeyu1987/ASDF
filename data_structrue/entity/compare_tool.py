@@ -10,6 +10,28 @@ class EntityNodeCompareTool():
 
 
     def compare1(self):
+        #self.compare_x()
+        self.compare_y()
+
+    def compare_y(self):
+        from .. import im
+        node1 = EntityNode("hand")
+        beauty_node = SpecialChildNode("hurge")
+        value_node = ValueNode(ValueNode.VALUE_EXIST)
+        beauty_node.add_value_node(value_node)
+        node1.add_special_child_node(beauty_node)
+
+
+        node2 = EntityNode("hand1")
+        beauty_node = SpecialChildNode("hurge")
+        value_node = ValueNode(ValueNode.VALUE_EXIST_MORE)
+        beauty_node.add_value_node(value_node)
+        node2.add_special_child_node(beauty_node)
+
+        im.on_enter_node(node1)
+        im.on_enter_node(node2)
+
+    def compare_x(self):
         from .. import SimpleNodeChain,FastChain,FastMap,InfoNode,ValueNode
         from .. import im, vm
         adjlist = ["beauty", "small", "big", "hurge", "smooth", "red", "blue", "strong", "thin"]

@@ -87,22 +87,22 @@ class EntityNode(NodeBase):
         return None
 
 
-    def get_str1(self,n):
-        head = n*"  "
-        str1 = head+"EntityNode:"
-        str1 = str1  + ":" + self.get_value() + "\n"
-        for key in self.follow_edge_map:
-            edge = self.follow_edge_map[key]
-            node_to = edge.node_to
-            ctr = node_to.get_str1(n+1)
-            str1 = str1  + head +  ctr + "\n"
-
-        for edge in self.edge_list:
-            node_to = edge.node_to
-            ctr = node_to.get_str1(n + 1)
-            str1 = str1 + head + ctr + "\n"
-
-        return str1
+    # def get_str1(self,n):
+    #     head = n*"  "
+    #     str1 = head+"EntityNode:"
+    #     str1 = str1  + ":" + self.get_value() + "\n"
+    #     for key in self.follow_edge_map:
+    #         edge = self.follow_edge_map[key]
+    #         node_to = edge.node_to
+    #         ctr = node_to.get_str1(n+1)
+    #         str1 = str1  + head +  ctr + "\n"
+    #
+    #     for edge in self.edge_list:
+    #         node_to = edge.node_to
+    #         ctr = node_to.get_str1(n + 1)
+    #         str1 = str1 + head + ctr + "\n"
+    #
+    #     return str1
 
 
     def add_special_child_node(self,child_node):

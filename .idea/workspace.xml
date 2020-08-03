@@ -2,61 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8bccdad-5289-4a54-a9ad-cae6dc55cba0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Project FES/提交审核/评审报告.doc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/buildin_handler/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/buildin_handler/entity_handler.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/d_info/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/d_info/info_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/address_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/compare_tool.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/compare_value.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/entity.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/entity.vsd" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/entity_serial_value.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/infosource_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/number_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/special_child_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/special_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/time_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/entity/value_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_map.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/manager/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/manager/image_manager.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/manager/voice_manager.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data_structrue/simple_node_chain/replace_node.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test_compare.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/action/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/action/buildin/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/action/buildin/buildin_main.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/action/buildin/buildin_read_entity.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/action/buildin/buildin_read_sound.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/action/buildin/buildin_timegap.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/book/1/entity.txt" afterPath="$PROJECT_DIR$/book/1/entity.txt" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/d1chainlist.py" afterPath="$PROJECT_DIR$/data_structrue/d1chainlist.py" />
       <change beforePath="$PROJECT_DIR$/data_structrue/edge_base.py" afterPath="$PROJECT_DIR$/data_structrue/edge_base.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" afterPath="$PROJECT_DIR$/data_structrue/fast_tree/fast_tree_main.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/inner_data.py" afterPath="$PROJECT_DIR$/data_structrue/inner_data.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/entity/compare_tool.py" afterPath="$PROJECT_DIR$/data_structrue/entity/compare_tool.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/entity/entity.py" afterPath="$PROJECT_DIR$/data_structrue/entity/entity.py" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/manager/image_manager.py" afterPath="$PROJECT_DIR$/data_structrue/manager/image_manager.py" />
       <change beforePath="$PROJECT_DIR$/data_structrue/node_base.py" afterPath="$PROJECT_DIR$/data_structrue/node_base.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/simple_node_chain/__init__.py" afterPath="$PROJECT_DIR$/data_structrue/simple_node_chain/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" afterPath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py" afterPath="$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py" afterPath="$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py" afterPath="$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py" />
-      <change beforePath="$PROJECT_DIR$/entity/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/entity/entity.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/entity/entity_manager.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/globalconfig.py" afterPath="$PROJECT_DIR$/globalconfig.py" />
-      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="$PROJECT_DIR$/receiver/eye.py" afterPath="$PROJECT_DIR$/receiver/eye.py" />
-      <change beforePath="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" afterPath="$PROJECT_DIR$/receiver/local_reader/number_receiver.py" />
-      <change beforePath="$PROJECT_DIR$/test_main.py" afterPath="$PROJECT_DIR$/test_main.py" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,45 +18,59 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PyProjectJZY$main.coverage" NAME="main Coverage Results" MODIFIED="1596186313660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyProjectJZY$main.coverage" NAME="main Coverage Results" MODIFIED="1596446706045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="voice_manager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structrue/manager/voice_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="29" column="75" lean-forward="false" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+            <state relative-caret-position="-914">
+              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stupid_node.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py">
+      <file leaf-file-name="simple_node_chain.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="36" column="35" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="298">
+              <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="compare_value.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/entity/compare_value.py">
+      <file leaf-file-name="image_manager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/manager/image_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="740">
+              <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+              <folding>
+                <element signature="e#1885#1900#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edge_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/edge_base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-161">
+              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entity.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entity.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structrue/entity/entity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1274">
-              <caret line="20" column="37" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="865">
+              <caret line="91" column="35" lean-forward="true" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -116,18 +81,8 @@
       <file leaf-file-name="special_child_node.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structrue/entity/special_child_node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="value_node.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structrue/entity/value_node.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="178">
+              <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -136,18 +91,28 @@
       <file leaf-file-name="info_node.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structrue/d_info/info_node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+            <state relative-caret-position="-45">
+              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node_base.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="node_base.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_structrue/node_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="68" column="62" lean-forward="false" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
+            <state relative-caret-position="983">
+              <caret line="141" column="9" lean-forward="false" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simple_node_chain_node.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -156,8 +121,8 @@
       <file leaf-file-name="compare_tool.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structrue/entity/compare_tool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="59" lean-forward="true" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+            <state relative-caret-position="234">
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -176,13 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>message_cache</find>
-      <find>我有一个</find>
-      <find>，</find>
-      <find>def say</find>
-      <find>get</find>
-      <find>add_node</find>
-      <find>self.edgelist</find>
       <find>map1</find>
       <find>edge</find>
       <find>node1</find>
@@ -202,10 +160,17 @@
       <find>related_entity_node2</find>
       <find>node_parent</find>
       <find>info_node</find>
-      <find>CompareValue</find>
-      <find>add_action</find>
       <find>parent_node</find>
+      <find>add_action</find>
+      <find>compare_info_node</find>
+      <find>find_compare</find>
+      <find>get_max_len</find>
+      <find>compare_simple_node_chain</find>
+      <find>chain</find>
       <find>compare</find>
+      <find>chain2</find>
+      <find>edgelist</find>
+      <find>CompareValue</find>
     </findStrings>
     <replaceStrings>
       <replace>SimpleNodeChain</replace>
@@ -229,7 +194,9 @@
       <replace>map1.get_map()</replace>
       <replace>node1_parent</replace>
       <replace>get_value()</replace>
+      <replace>node</replace>
       <replace>entity_node</replace>
+      <replace>edge_list</replace>
       <replace>node2_parent</replace>
     </replaceStrings>
   </component>
@@ -275,9 +242,7 @@
         <option value="$PROJECT_DIR$/data_structrue/buildin_handler/entity_handler.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/data_structrue/__init__.py" />
-        <option value="$PROJECT_DIR$/data_structrue/manager/image_manager.py" />
         <option value="$PROJECT_DIR$/data_structrue/manager/__init__.py" />
-        <option value="$PROJECT_DIR$/data_structrue/edge_base.py" />
         <option value="$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py" />
         <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_chain.py" />
         <option value="$PROJECT_DIR$/data_structrue/fast_tree/fast_node.py" />
@@ -289,13 +254,15 @@
         <option value="$PROJECT_DIR$/data_structrue/entity/address_node.py" />
         <option value="$PROJECT_DIR$/data_structrue/entity/compare_value.py" />
         <option value="$PROJECT_DIR$/data_structrue/d_info/info_node.py" />
-        <option value="$PROJECT_DIR$/data_structrue/entity/compare_tool.py" />
-        <option value="$PROJECT_DIR$/data_structrue/node_base.py" />
         <option value="$PROJECT_DIR$/data_structrue/manager/voice_manager.py" />
         <option value="$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py" />
         <option value="$PROJECT_DIR$/data_structrue/entity/special_child_node.py" />
         <option value="$PROJECT_DIR$/data_structrue/entity/value_node.py" />
+        <option value="$PROJECT_DIR$/data_structrue/entity/compare_tool.py" />
+        <option value="$PROJECT_DIR$/data_structrue/manager/image_manager.py" />
+        <option value="$PROJECT_DIR$/data_structrue/edge_base.py" />
         <option value="$PROJECT_DIR$/data_structrue/entity/entity.py" />
+        <option value="$PROJECT_DIR$/data_structrue/node_base.py" />
       </list>
     </option>
   </component>
@@ -388,6 +355,12 @@
               <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
               <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
               <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyProjectJZY" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyProjectJZY" type="462c0819:PsiDirectoryNode" />
+              <item name="data_structrue" type="462c0819:PsiDirectoryNode" />
+              <item name="simple_node_chain" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -550,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595581222947</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="2020 7 31">
+      <created>1596186871696</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1596186871696</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -625,7 +605,8 @@
     <MESSAGE value="2020 7 17" />
     <MESSAGE value="2020 7 20" />
     <MESSAGE value="2020 7 24" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020 7 24" />
+    <MESSAGE value="2020 7 31" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020 7 31" />
   </component>
   <component name="WindowStateProjectService">
     <state x="694" y="320" key="#com.intellij.fileTypes.FileTypeChooser" />
@@ -641,15 +622,29 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_structrue/node_base.py</url>
+          <line>147</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_structrue/node_base.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="190" />
+      <option name="time" value="193" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="__py_debug_temp_var_1490645620.value" />
         <watch expression="gap_string[j:len(gap_string)]" />
+        <watch expression="node_to._value" />
+        <watch expression="self._value" />
       </configuration>
     </watches-manager>
   </component>
@@ -876,30 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/manager/image_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/edge_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -913,16 +884,6 @@
         <state relative-caret-position="405">
           <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="160" column="43" lean-forward="false" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,52 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/d_info/info_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/entity/compare_tool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="59" lean-forward="true" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/node_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="68" column="62" lean-forward="false" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/manager/voice_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="29" column="75" lean-forward="false" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_structrue/stupid_tree/stupid_node.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="36" column="35" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/entity/special_child_node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -1066,13 +985,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_structrue/entity/entity.py">
+    <entry file="file://$PROJECT_DIR$/data_structrue/d_info/info_node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1274">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="-45">
+          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/manager/voice_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-914">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="20" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/entity/special_child_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/entity/compare_tool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/simple_node_chain/simple_node_chain_node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/edge_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/manager/image_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+          <folding>
+            <element signature="e#1885#1900#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/entity/entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="865">
+          <caret line="91" column="35" lean-forward="true" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structrue/node_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="983">
+          <caret line="141" column="9" lean-forward="false" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

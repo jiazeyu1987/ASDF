@@ -8,6 +8,7 @@ class NodeBase:
     TYPE_INFO_SOURCE = "TYPE_INFO_SOURCE"
     TYPE_VALUE = "TYPE_VALUE"
     TYPE_ENTITY = "TYPE_ENTITY"
+    TYPE_REPLACE = "TYPE_REPLACE"
 
     COMPARE_MORE = "more"
     COMPARE_LACK = "lack"
@@ -15,6 +16,8 @@ class NodeBase:
 
     ACTION_CREATE = "action_create_J"
     NODE_BASE_ID = 1
+
+    VALUE_REPLACE = "籴Replace"
     def __init__(self,value:str,strong=0):
         self._value = value
         self.strong = 0
@@ -51,6 +54,9 @@ class NodeBase:
 
     def link(self,node,edge_type):
         from .edge_base import EdgeBase
+        if(node.get_value()==self.get_value()):
+            raise Exception(node.get_value())
+
         for edge in self.edge_list:
             node_to = edge.node_to
             if(node_to.get_value()==node.get_value() and edge.type == edge_type):
@@ -129,7 +135,25 @@ class NodeBase:
             return self.edge_list[0].node_to
 
     def get_str1(self, n):
+        from . import EdgeBase
         head = n * "  "
         str1 = head
         str1 = str1 + self.get_value() + "\n"
+        #print(self._value)
+        for edge in self.edge_list:
+            if(edge.type in [EdgeBase.TYPE_BELONG]):
+                continue
+            #print("1",self._value,edge.type,edge.node_to.get_value())
+            node_to = edge.node_to
+            str1 = str1+head+node_to.get_str1(n+1)
+
+        for edgekey in self.follow_edge_map:
+            edge = self.follow_edge_map[edgekey]
+            if (edge.type in [EdgeBase.TYPE_BELONG]):
+                continue
+            #print("2",self._value,edge.type,edge.node_to.get_value())
+            str1 = str1 + head + edge.node_to.get_str1(n + 1)
         return str1
+
+    def __str__(self):
+        return self.get_str1(0)
