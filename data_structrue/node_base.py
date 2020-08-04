@@ -22,10 +22,14 @@ class NodeBase:
         self._value = value
         self.strong = 0
         self.type = 0
-        self.follow_edge_map = {}
+        #self.follow_edge_map = {}
         self.edge_list = []
         self.id = NodeBase.NODE_BASE_ID
         NodeBase.NODE_BASE_ID+=1
+
+
+    def get_edge_list(self):
+        return self.edge_list
 
     def copy(self):
         node = NodeBase(self.get_value())
@@ -147,12 +151,7 @@ class NodeBase:
             node_to = edge.node_to
             str1 = str1+head+node_to.get_str1(n+1)
 
-        for edgekey in self.follow_edge_map:
-            edge = self.follow_edge_map[edgekey]
-            if (edge.type in [EdgeBase.TYPE_BELONG]):
-                continue
-            #print("2",self._value,edge.type,edge.node_to.get_value())
-            str1 = str1 + head + edge.node_to.get_str1(n + 1)
+
         return str1
 
     def __str__(self):

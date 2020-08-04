@@ -22,8 +22,14 @@ class EdgeBase:
         self.strong-=weight
 
 
+    def value_equal(self,edge):
+        if(self.node_from.get_value()==edge.node_from.get_value() and
+        self.node_to.get_value()==edge.node_to.get_value()):
+            return True
+        return False
+
     def __str__(self):
         str1 = "edge info weight:"+self.strong.__str__()
-        str1 = str1+"   "+self.node_from.value.__str__()
-        str1 = str1+" to "+self.node_to.value.__str__()
+        str1 = str1+"   "+self.node_from.get_value().__str__()
+        str1 = str1+" to "+self.node_to. get_value().__str__()
         return str1

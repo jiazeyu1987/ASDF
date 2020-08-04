@@ -28,21 +28,21 @@ class FastChain:
                     self.edgelist.append(edge)
                     if(flag):
                         has_repeat_flag = True
-                        if(self.repeat_node_chain.head==None or self.repeat_node_chain.current_node.value==g.replace_symbol):
-                            self.repeat_node_chain.enter_node_val(current_fast_node.value)
-                        self.repeat_node_chain.enter_node_val(fast_node.value)
+                        if(self.repeat_node_chain.head==None or self.repeat_node_chain.current_node.get_value()==g.replace_symbol):
+                            self.repeat_node_chain.enter_node_val(current_fast_node.get_value())
+                        self.repeat_node_chain.enter_node_val(fast_node.get_value())
                     else:
                         if(fast_node.strong>add_weight):
                             has_repeat_flag = True
                             self.repeat_node_chain.add_zhanwei_node()
-                            self.repeat_node_chain.enter_node_val(fast_node.value)
+                            self.repeat_node_chain.enter_node_val(fast_node.get_value())
                         else:
                             self.repeat_node_chain.add_zhanwei_node()
                else:
                    if (fast_node.strong > add_weight):
                        has_repeat_flag = True
                        self.repeat_node_chain.add_zhanwei_node()
-                       self.repeat_node_chain.enter_node_val(fast_node.value)
+                       self.repeat_node_chain.enter_node_val(fast_node.get_value())
                    else:
                        edge = FastEdge(None, fast_node)
                        edge.add_weight(add_weight)
@@ -71,7 +71,7 @@ class FastChain:
         str1 = ""
         while True:
             if (current_chain_node != None):
-                char1 = current_chain_node.value
+                char1 = current_chain_node.get_value()
                 if (char1 in map1.get_map()):
                     pass
                 else:
@@ -84,34 +84,34 @@ class FastChain:
                         has_flag = True
                         if(rev==-1):
                             rev = 1
-                            str1 = str1 + edge.node_from.value
+                            str1 = str1 + edge.node_from.get_value()
                         elif(rev==0):
                             arr.append([str1,0])
-                            str1 = edge.node_from.value
+                            str1 = edge.node_from.get_value()
                             rev = 1
                         else:
-                            str1 = str1+edge.node_from.value
+                            str1 = str1+edge.node_from.get_value()
                     else:
                         if(rev==-1):
                             rev = 0
-                            str1 = str1+edge.node_from.value
+                            str1 = str1+edge.node_from.get_value()
                         elif (rev == 1):
-                            str1 = str1 + edge.node_from.value
+                            str1 = str1 + edge.node_from.get_value()
                             arr.append([str1, 1])
                             str1 = ""
                             rev = 0
                         else:
-                            str1 = str1 + edge.node_from.value
+                            str1 = str1 + edge.node_from.get_value()
                 else:
                     pass
                 current_fast_node = fast_node
                 current_chain_node = current_chain_node.get_next_node()
             else:
                 if (rev == 1):
-                    str1 = str1+edge1.node_to.value
+                    str1 = str1+edge1.node_to.get_value()
                     arr.append([str1, 1])
                 else:
-                    str1 = str1 + edge1.node_to.value
+                    str1 = str1 + edge1.node_to.get_value()
                     arr.append([str1, 0])
                 break
         return arr,has_flag
@@ -125,12 +125,12 @@ class FastChain:
 
     def print_edgelist(self):
         for edge in self.edgelist:
-            print("fast_chain_edge",edge.strong.__str__(),edge.node_to.value)
+            print("fast_chain_edge",edge.strong.__str__(),edge.node_to.get_value())
 
     def __str__(self):
         len1 = len(self.edgelist)
         str1 = "fast chain info:" + len1.__str__() + " "
         for edge in self.edgelist:
             node_to = edge.node_to
-            str1 = str1 + " - " + node_to.value
+            str1 = str1 + " - " + node_to.get_value()
         return str1

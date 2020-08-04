@@ -77,17 +77,58 @@ from .. import *
 class ImageManager:
     def __init__(self):
         self.cached_entity_node = None
-
+        self.cached_chain_head = None
     '''
         输入node
     '''
-    def on_enter_node(self,in_entity_node):
+    def on_enter_node(self,chain_head,in_entity_node):
         if(self.cached_entity_node==None):
             self.cached_entity_node = in_entity_node
+            self.cached_chain_head = chain_head
         else:
-            differ = self.compare_node(self.cached_entity_node,in_entity_node)
-            self.handler_differ(self.cached_entity_node,in_entity_node,differ)
+            returnlist = self.get_all_returnvalue(self.cached_chain_head,chain_head)
+            for edge in returnlist:
+                for e in edge:
+                    print(e)
             self.cached_entity_node = in_entity_node
+            self.cached_chain_head = chain_head
+
+    def get_all_returnvalue(self,cached_node,in_node):
+            node_more_list, node_equal_list, node_less_list = self.get_compare_node_list(cached_node,in_node,[EdgeBase.TYPE_NORMAL])
+            map_equal = {}
+            map_differ = {}
+            self.mark_equal_edge(in_node,node_equal_list,map_equal,map_differ)
+
+            tmplist = []
+            returnlist = []
+            self.get_actionlist(in_node,map_differ,tmplist,returnlist)
+            return returnlist
+
+
+    def get_actionlist(self,entity_node,map_differ,tmplist,returnlist):
+        for edge in entity_node.edge_list:
+            if(edge.id in map_differ):
+                returnlist.append(tmplist+[ActionUnit(am.SIMPLE_LINK,edge.node_from,edge.node_to)])
+            else:
+                node_to = edge.node_to
+                self.get_actionlist(node_to,map_differ,tmplist+[ActionUnit(am.FIND,edge.node_from,edge.node_to)],returnlist)
+
+
+
+    def mark_equal_edge(self,in_entity_node,node_equal_list,map_equal,map_differ):
+        for edge in in_entity_node.edge_list:
+            has_flag = False
+            for equal_edge in node_equal_list:
+                if(edge.value_equal(equal_edge)):
+                    map_equal[edge.id]=1
+                    has_flag = True
+                    break
+            if(has_flag==False):
+                map_differ[edge.id]=1
+            self.mark_equal_edge(edge.node_to,node_equal_list,map_equal,map_differ)
+
+
+
 
 
     def handler_differ(self,cached_node,in_node,differ):
@@ -111,14 +152,7 @@ class ImageManager:
         for edge in node_replace.edge_list:
             edge.node_from = node_replace
 
-        for key1 in node1.follow_edge_map:
-            node_replace.follow_edge_map[key1] = node1.follow_edge_map[key1]
-        for key1 in node2.follow_edge_map:
-            node_replace.follow_edge_map[key1] = node2.follow_edge_map[key1]
-        for key1 in node_replace.follow_edge_map:
-            node_replace.follow_edge_map[key1].node_from = node_replace
-        node1.follow_edge_map = {}
-        node2.follow_edge_map = {}
+
 
         if(node1_parent!=None):
             for edge in node1_parent.edge_list:
@@ -150,75 +184,50 @@ class ImageManager:
         if (cached_entity_node.get_value() != in_node.get_value()):
             self.create_replace_node(cached_entity_node,in_node,None,None)
 
-    '''
-        找出只有一个点不同的情况
-    '''
-    def compare_node(self,cached_entity_node,in_node,in_number = 0):
-        differ = 0
-        if(cached_entity_node.get_value()!=in_node.get_value()):
-            differ+=2
+
+
+    def get_compare_node_list(self,cached_entity_node,in_node,whitelist,in_number = 0):
+        more_list = []
+        equal_list = []
+        less_list = []
         for edge in cached_entity_node.edge_list:
-            if(edge.type!=EdgeBase.TYPE_NORMAL):
+            if(edge.type in whitelist == False):
                 continue
             node_to = edge.node_to
             has_flag = False
             for in_edge in in_node.edge_list:
-                if (in_edge.type != EdgeBase.TYPE_NORMAL):
+                if (in_edge.type in whitelist == False):
                     continue
                 in_node_to = in_edge.node_to
                 if (node_to.get_value() == in_node_to.get_value()):
-                    differ = differ + self.compare_node(node_to, in_node_to)
+                    equal_list.append(edge)
+                    equal_list.append(in_edge)
+                    more_list_sub,equal_list_sub,less_list_sub = self.get_compare_node_list(node_to,in_node_to,whitelist)
+                    more_list = more_list+more_list_sub
+                    equal_list = equal_list+equal_list_sub
+                    less_list = less_list+less_list_sub
                     has_flag = True
                     break
             if (has_flag == False):
-                differ += 1
+                more_list.append(edge)
 
         for edge in in_node.edge_list:
-            if (edge.type != EdgeBase.TYPE_NORMAL):
+            if (edge.type in whitelist == False):
                 continue
             node_to = edge.node_to
             has_flag = False
             for in_edge in cached_entity_node.edge_list:
-                if (in_edge.type != EdgeBase.TYPE_NORMAL):
+                if (in_edge.type in whitelist == False):
                     continue
                 in_node_to = in_edge.node_to
                 if (node_to.get_value() == in_node_to.get_value()):
                     has_flag = True
                     break
             if (has_flag == False):
-                differ += 1
+                less_list.append(edge)
 
-        for key in in_node.follow_edge_map:
-            has_flag = False
-            edge1 = in_node.follow_edge_map[key]
-            if(edge1.type!=EdgeBase.TYPE_NORMAL):
-                continue
-            for key2 in cached_entity_node.follow_edge_map:
-                edge2 = cached_entity_node.follow_edge_map[key2]
-                if (edge2.type != EdgeBase.TYPE_NORMAL):
-                    continue
-                if (edge1.node_to.get_value() == edge2.node_to.get_value()):
-                    differ = differ + self.compare_node(in_node.follow_edge_map[key].node_to,
-                                                        cached_entity_node.follow_edge_map[key2].node_to)
-                    has_flag = True
-            if (has_flag == False):
-                differ += 1
 
-        for key in cached_entity_node.follow_edge_map:
-            edge1 = cached_entity_node.follow_edge_map[key]
-            if(edge1.type!=EdgeBase.TYPE_NORMAL):
-                continue
-            has_flag = False
-            for key2 in in_node.follow_edge_map:
-                edge2 = in_node.follow_edge_map[key2]
-                if (edge2.type != EdgeBase.TYPE_NORMAL):
-                    continue
-                if (edge1.node_to.get_value() == edge2.node_to.get_value()):
-                    has_flag = True
-                    break
-            if (has_flag == False):
-                differ += 1
 
-        return differ
+        return more_list,equal_list,less_list
 
 im = ImageManager()

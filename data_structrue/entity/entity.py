@@ -106,12 +106,7 @@ class EntityNode(NodeBase):
 
 
     def add_special_child_node(self,child_node):
-        value = child_node.get_value()
-        if (value in self.follow_edge_map):
-            node = child_node
-        else:
-            node = child_node
-            self.link_map(node, EdgeBase.TYPE_NORMAL, value)
+        self.link(child_node,EdgeBase.TYPE_NORMAL)
 
 
     def __str__(self):
