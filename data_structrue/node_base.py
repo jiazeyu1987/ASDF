@@ -58,7 +58,7 @@ class NodeBase:
 
     def link(self,node,edge_type):
         from .edge_base import EdgeBase
-        if(node.get_value()==self.get_value()):
+        if(node.id==self.id):
             raise Exception(node.get_value())
 
         for edge in self.edge_list:
@@ -138,21 +138,33 @@ class NodeBase:
         else:
             return self.edge_list[0].node_to
 
-    def get_str1(self, n):
+
+    def get_node_by_edge_type(self,edge_type):
+        arr = []
+        for edge in self.edge_list:
+            if(edge.type == edge_type):
+                arr.append(edge.node_to)
+        return arr
+
+    def get_str1(self, n,edgelist,edgetype=""):
         from . import EdgeBase
-        head = n * "  "
-        str1 = head
-        str1 = str1 + self.get_value() + "\n"
+        head = n * "        "
+        str1 = ""
+        str1 = str1 + head+edgetype+","+self.get_value() + "\n"
         #print(self._value)
         for edge in self.edge_list:
-            if(edge.type in [EdgeBase.TYPE_BELONG]):
+            if((edge.type in edgelist) == False):
                 continue
             #print("1",self._value,edge.type,edge.node_to.get_value())
             node_to = edge.node_to
-            str1 = str1+head+node_to.get_str1(n+1)
+            str1 = str1+head+node_to.get_str1(n+1,edgelist,edge.type)
 
 
         return str1
 
     def __str__(self):
-        return self.get_str1(0)
+        from . import EdgeBase
+        return self.get_str1(0,[EdgeBase.TYPE_NORMAL])
+
+    def print(self,edgelist):
+        print(self.get_str1(0,edgelist))

@@ -29,20 +29,20 @@ class FastChain:
                     if(flag):
                         has_repeat_flag = True
                         if(self.repeat_node_chain.head==None or self.repeat_node_chain.current_node.get_value()==g.replace_symbol):
-                            self.repeat_node_chain.enter_node_val(current_fast_node.get_value())
-                        self.repeat_node_chain.enter_node_val(fast_node.get_value())
+                            self.repeat_node_chain.add_new_node_by_char(current_fast_node.get_value())
+                        self.repeat_node_chain.add_new_node_by_char(fast_node.get_value())
                     else:
                         if(fast_node.strong>add_weight):
                             has_repeat_flag = True
                             self.repeat_node_chain.add_zhanwei_node()
-                            self.repeat_node_chain.enter_node_val(fast_node.get_value())
+                            self.repeat_node_chain.add_new_node_by_char(fast_node.get_value())
                         else:
                             self.repeat_node_chain.add_zhanwei_node()
                else:
                    if (fast_node.strong > add_weight):
                        has_repeat_flag = True
                        self.repeat_node_chain.add_zhanwei_node()
-                       self.repeat_node_chain.enter_node_val(fast_node.get_value())
+                       self.repeat_node_chain.add_new_node_by_char(fast_node.get_value())
                    else:
                        edge = FastEdge(None, fast_node)
                        edge.add_weight(add_weight)

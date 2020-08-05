@@ -5,7 +5,10 @@ class SimpleNodeChainNode(NodeBase):
 
 
     def get_next_node(self):
+        from .. import EdgeBase
         for edge in self.edge_list:
+            if(edge.type!=EdgeBase.TYPE_NORMAL):
+                continue
             return edge.node_to
 
     def remove_edge(self):

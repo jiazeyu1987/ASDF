@@ -2,7 +2,7 @@ from . import *
 import globalconfig as g
 class SimpleNodeChain:
     def __init__(self,list1:list=None):
-        self.head = None
+        self.head = SimpleNodeChainNode("Start")
         #current node
         self.current_node = self.head
         if(list1!=None):
@@ -10,6 +10,11 @@ class SimpleNodeChain:
 
     def get_head(self)->SimpleNodeChainNode:
         return self.head
+
+
+    def add_node(self,new_node:SimpleNodeChainNode):
+        self.current_node.link(new_node,EdgeBase.TYPE_NORMAL)
+        self.current_node = new_node
 
     def change_shape(self,node1:SimpleNodeChainNode,len1:int,replace_value:str):
         replace_node = ReplaceNode(replace_value)
@@ -47,6 +52,8 @@ class SimpleNodeChain:
         while True:
             if(tnode.get_value()==cnode.get_value()):
                 rn = self.equal_chain_len(cnode,tnode)
+                if(cnode.get_value()=="hurge3"):
+                    print("FFFFFFFFFFFFFF",cnode.get_value(),t_node.value(),rn)
                 if(rn>max):
                     max = rn
                     target_node = tnode
@@ -118,9 +125,9 @@ class SimpleNodeChain:
 
 
     #从receiver/eye异步接收到的数据
-    def on_data_enter(self,charlist):
+    def add_nodes_by_charlist(self,charlist):
         for char1 in charlist:
-            self.enter_node_val(char1)
+            self.add_new_node_by_char(char1)
 
 
     def __str__(self):
@@ -141,9 +148,9 @@ class SimpleNodeChain:
 
     def enter_node_list(self,vallist:list):
         for i in range(len(vallist)):
-            self.enter_node_val(vallist[i])
+            self.add_new_node_by_char(vallist[i])
 
-    def enter_node_val(self,val):
+    def add_new_node_by_char(self,val):
         from .. import EdgeBase
         if(self.head==None):
             self.head = self.new(val)
@@ -152,6 +159,8 @@ class SimpleNodeChain:
             new_node = self.new(val)
             self.current_node.link(new_node,EdgeBase.TYPE_NORMAL)
             self.current_node = new_node
+
+
 
     def get_str(self):
         current = self.get_head()

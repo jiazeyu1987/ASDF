@@ -4,7 +4,7 @@ class StupidNode(NodeBase):
     def __init__(self,value):
         super().__init__(value)
         self.unique = False
-
+        self.follow_edge_map = {}
 
     def add_node(self,char1):
         from .stupid_edge import StupidEdge

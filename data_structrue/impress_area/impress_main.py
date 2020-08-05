@@ -9,11 +9,11 @@ class ImpressMain(ImpressMainPage):
 
     def test(self):
         simple_node_chain = SimpleNodeChain()
-        simple_node_chain.on_data_enter("天周日天气不错")
+        simple_node_chain.add_nodes_by_charlist("天周日天气不错")
         self.add_simple_node_chain(simple_node_chain)
 
         simple_node_chain = SimpleNodeChain()
-        simple_node_chain.on_data_enter("图星期天天气不错")
+        simple_node_chain.add_nodes_by_charlist("图星期天天气不错")
         self.add_simple_node_chain(simple_node_chain)
 
         self.compare()

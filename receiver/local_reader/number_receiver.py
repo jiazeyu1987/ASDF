@@ -98,7 +98,7 @@ class NumberReceiver(Thread):
 
         while True:
             simple_node_chain = SimpleNodeChain()
-            simple_node_chain.on_data_enter(val1)
+            simple_node_chain.add_nodes_by_charlist(val1)
             self.inner_message_queue.put(InnerData(g.entity_book_name,simple_node_chain))
             if(len(rest)>0):
                 val1, rest = split_gap_string_by_gap_number(rest, 1)
@@ -111,7 +111,7 @@ class NumberReceiver(Thread):
 
         #处理数据的数据结构
         #simple_node_chain = SimpleNodeChain()
-        #simple_node_chain.on_data_enter(change_raw_string_to_gap_string(self.char_str))
+        #simple_node_chain.add_nodes_by_charlist(change_raw_string_to_gap_string(self.char_str))
 
 
         #self.chainlist.add_chain(simple_node_chain)

@@ -1,4 +1,5 @@
 from . import *
+from .. import *
 import globalconfig as g
 class StupidTree:
     def __init__(self):
@@ -11,6 +12,17 @@ class StupidTree:
             current_node = new_node
         current_node.link(final_node,final_edge_type)
         # uni.unique = True
+    def add_chain(self,chain:SimpleNodeChain):
+        head = chain.get_head()
+        current_node = self.root
+        while True:
+            head = head.get_next_node()
+            if(head==None):
+                break
+            new_node = current_node.add_node(head.get_value())
+            current_node = new_node
+
+
 
     def get_nearest(self,value1):
         return self.root.get_nearest(value1)

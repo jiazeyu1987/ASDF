@@ -105,9 +105,4 @@ class EntityNode(NodeBase):
     #     return str1
 
 
-    def add_special_child_node(self,child_node):
-        self.link(child_node,EdgeBase.TYPE_NORMAL)
 
-
-    def __str__(self):
-        return self.get_str1(0)

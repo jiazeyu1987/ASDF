@@ -13,6 +13,7 @@ def p(title,message):
         if(log_map[title]==1):
             print(message)
 
+model_tree = None
 '''
     Read Relation
 '''
