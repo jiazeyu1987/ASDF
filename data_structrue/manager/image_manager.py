@@ -78,6 +78,194 @@ class ImageManager:
     def __init__(self):
         self.cached_entity_node = None
         self.cached_chain_head = None
+        self.str_tree = StupidTree()
+        self.model_node_tree = StupidTree()
+        self.cached_strlist = None
+
+
+    def on_raw_data(self,strlist,in_entity_node):
+        print(strlist)
+        if(self.cached_strlist==None):
+            self.cached_strlist = strlist
+            self.cached_entity_node = in_entity_node
+            return
+
+        builded_model = self.get_build_model(strlist)
+        cached_builded_model = self.get_build_model(self.cached_strlist)
+        if(len(builded_model)>0):
+            r,exist_model = self.model_node_tree.get_model(builded_model,EdgeBase.TYPE_NODE_TO_MODEL)
+            if(r):
+                replace_node0_models = self.find_replace_node_only_n(exist_model, 0)
+                replace_node1_models = self.find_replace_node_only_n(exist_model, 1)
+                if(len(replace_node0_models)>0):
+                    #todo
+                    pass
+                if(len(replace_node1_models)>0):
+                    replace_model = replace_node1_models[0]
+                    ddddddddddd
+                    dd
+                    dictd
+                    dictd
+                    dictd
+                    dict
+            self.model_node_tree.add_models(builded_model,in_entity_node,EdgeBase.TYPE_NODE_TO_MODEL)
+            if(len(cached_builded_model)>0):
+                self.compare_node_model(cached_builded_model,builded_model,self.cached_entity_node,in_entity_node)
+                return
+        
+        self.compare_strlist_model(strlist,in_entity_node)
+        self.cached_strlist = strlist
+        self.cached_entity_node = in_entity_node
+
+    def find_replace_node_only_n(self,modelss,n):
+        arr = []
+        for model in modelss:
+            index=0
+            for node in model:
+                if(node.get_value()[0]=="瓛"):
+                    index+=1
+            if(index==n):
+                arr.append(model)
+        return arr
+
+    def compare_node_model(self,cached_node_list,in_node_list,cached_entity_node,in_entity_node):
+        node_map = {}
+        self.mark_node_list(cached_node_list, node_map)
+        self.mark_node_list(in_node_list, node_map)
+        node_arr = []
+        for key in node_map:
+            if (node_map[key] == 1):
+                node_arr.append(key)
+        if (len(node_arr) == 2):
+            replace_node = ReplaceNode()
+            chain1 = self.create_replace_node_by_1(cached_node_list,node_arr,replace_node)
+            chain2 = self.create_replace_node_by_1(in_node_list, node_arr, replace_node)
+            self.create_replace_node_by_2(cached_entity_node,node_arr,replace_node)
+            self.create_replace_node_by_2(in_entity_node, node_arr, replace_node)
+            self.model_node_tree.add_models(chain1.get_node_list(), cached_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
+            self.model_node_tree.add_models(chain2.get_node_list(), in_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
+
+            # print(chain1)
+            # print(chain2)
+            # print(in_entity_node)
+            # print(cached_entity_node)
+            # replace_node.print([EdgeBase.TYPE_CONTAIN])
+
+    def create_replace_node_by_2(self,in_entity_node,node_arr,replace_node):
+        if(in_entity_node.get_value() in node_arr):
+            in_entity_node.set_value(replace_node.get_value())
+        for edge in in_entity_node.edge_list:
+            self.create_replace_node_by_2(edge.node_to,node_arr,replace_node)
+
+    def create_replace_node_by_1(self,nodelist,node_arr,replace_node):
+        chain = SimpleNodeChain()
+        head = chain.get_head()
+        for node in nodelist:
+            if(node.get_value() in node_arr):
+                replace_node.link(node.copy(),EdgeBase.TYPE_CONTAIN)
+                head.link(replace_node,EdgeBase.TYPE_NORMAL)
+                head = replace_node
+            else:
+                if(head==None):
+                    head = node.copy()
+                else:
+                    node_copy = node.copy()
+                    head.link(node_copy,EdgeBase.TYPE_NORMAL)
+                    head = node_copy
+        return chain
+
+
+    def mark_node_list(self,nodelist,node_map):
+        for node in nodelist:
+            value = node.get_value()
+            if(value in node_map):
+                node_map[value]+=1
+            else:
+                node_map[value]=1
+
+    def compare_strlist_model(self,strlist,in_node):
+        str_map = {}
+        self.map_strlist(self.cached_strlist,str_map)
+        self.map_strlist(strlist, str_map)
+        node_map = {}
+        self.map_node(self.cached_entity_node, node_map)
+        self.map_node(in_node, node_map)
+        #print(node_map)
+        str_arr = []
+        for key in str_map:
+            if(str_map[key]==1):
+                str_arr.append(key)
+        node_arr = []
+        for key in node_map:
+            if(node_map[key]==1):
+                node_arr.append(key)
+        if(len(node_arr)==2):
+            str_list_sub = self.locate_strlist(strlist,str_arr)
+            node_sub = self.locate_node(in_node,node_arr)
+            self.bind_strlist_to_node(str_list_sub,node_sub)
+
+            str_list_sub = self.locate_strlist(self.cached_strlist, str_arr)
+            node_sub = self.locate_node(self.cached_entity_node, node_arr)
+            self.bind_strlist_to_node(str_list_sub, node_sub)
+
+
+    def bind_strlist_to_node(self,strlist,node):
+        self.str_tree.add_value(strlist,node,EdgeBase.TYPE_WORD_TO_NODE)
+        #self.str_tree.say()
+
+    def locate_node(self,in_node,node_arr):
+        node = None
+        val1 = in_node.get_value()
+        for node_value in node_arr:
+            if(val1==node_value):
+                return in_node.copy()
+        for edge in in_node.edge_list:
+            node_to = edge.node_to
+            node1 = self.locate_node(node_to,node_arr)
+            if(node1!=None):
+                return node1.copy()
+        return None
+
+    def locate_strlist(self,strlist,str_arr):
+        arr = []
+        for char in strlist:
+            for char2 in str_arr:
+                if(char==char2):
+                    arr.append(char)
+        return arr
+
+
+    def map_strlist(self,strlist1,map1):
+        for char1 in strlist1:
+            if(char1 in map1):
+                map1[char1]+=1
+            else:
+                map1[char1]=1
+
+    def get_build_model(self,strlist):
+        nodes_arr = []
+        cal = self._get_build_model(strlist,0,nodes_arr)
+        nodes_arr.reverse()
+        return nodes_arr
+
+    def _get_build_model(self,strlist,index,nodes_arr):
+        if(index==len(strlist)):
+            return True
+
+        nodelist,lenlist = self.str_tree.get_linked_node_by_strlist(strlist[index:],EdgeBase.TYPE_WORD_TO_NODE)
+
+        if(len(nodelist)==0):
+            return False
+
+        for i in range(len(nodelist)):
+            node1 = nodelist[i]
+            len1 = lenlist[i]
+            r = self._get_build_model(strlist,index+len1,nodes_arr)
+            if(r==True):
+                nodes_arr.append(node1.copy())
+                return True
+        return False
+
     '''
         输入node
     '''
@@ -284,7 +472,7 @@ class ImageManager:
                     demen1Node = link1dmenNodes[0]
                     replace_nodes = demen1Node.get_node_by_edge_type(EdgeBase.TYPE_BELONG)
                     if(len(replace_nodes)>0):
-                        node = replace_nodes[0]
+                        node = replace_nodes[0].copy()
                         map1[node.get_value()]=1
                     else:
                         raise Exception("FFFFFFFFF")

@@ -12,6 +12,16 @@ class SimpleNodeChain:
         return self.head
 
 
+    def get_node_list(self):
+        cnode = self.get_head()
+        arr = []
+        while True:
+            cnode = cnode.get_next_node()
+            if(cnode==None):
+                return arr
+            else:
+                arr.append(cnode)
+
     def add_node(self,new_node:SimpleNodeChainNode):
         self.current_node.link(new_node,EdgeBase.TYPE_NORMAL)
         self.current_node = new_node

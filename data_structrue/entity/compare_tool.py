@@ -11,7 +11,77 @@ class EntityNodeCompareTool():
 
     def compare1(self):
         #self.compare_x()
-        self.compare_y()
+        #self.compare_y()
+        self.compare_z()
+
+    def compare_z(self):
+        from .. import im
+        strlist1 = ["房", "子",  "非","常", "美"]
+        strlist2 = ["西", "瓜",  "非","常", "美"]
+        strlist3 = ["空", "调",  "非","常", "美"]
+        strlist4 = ["电", "脑",  "非","常", "美"]
+        strlist5 = ["手", "机",  "非","常", "美"]
+        biglist = [strlist1,strlist2,strlist3,strlist4,strlist5]
+        bigentitylist = []
+        self.create_false_entitylist(biglist,bigentitylist)
+        for i in range(len(biglist)):
+            strlist = biglist[i]
+            entity_node = bigentitylist[i]
+            im.on_raw_data(strlist,entity_node)
+        print("====================")
+        strlist1 = ["房", "子",  "非","常", "美"]
+        strlist2 = ["房", "子",  "非","常", "小"]
+        strlist3 = ["房", "子",  "非","常", "胖"]
+        strlist4 = ["房", "子",  "非","常", "大"]
+        strlist5 = ["房", "子",  "非","常", "脏"]
+        biglist = [strlist1, strlist2, strlist3, strlist4, strlist5]
+        bigentitylist = []
+        self.create_false_entitylist(biglist, bigentitylist)
+        for i in range(len(biglist)):
+            strlist = biglist[i]
+            entity_node = bigentitylist[i]
+            im.on_raw_data(strlist, entity_node)
+        print("====================")
+        strlist1 = ["房", "子", "非","常", "美"]
+        strlist2 = ["房", "子", "特","别","美"]
+        strlist3 = ["房", "子", "尤","其", "美"]
+        strlist4 = ["房", "子", "有","点", "美"]
+        strlist5 = ["房", "子", "及","其", "美"]
+        biglist = [strlist1, strlist2, strlist3, strlist4, strlist5]
+        bigentitylist = []
+        self.create_false_entitylist(biglist, bigentitylist)
+        for i in range(len(biglist)):
+            strlist = biglist[i]
+            entity_node = bigentitylist[i]
+            im.on_raw_data(strlist, entity_node)
+
+        print("====================")
+        strlist1 = ["房", "子", "非", "常", "美"]
+        strlist2 = ["房", "子", "特", "别", "美"]
+        strlist3 = ["房", "子", "尤", "其", "美"]
+        strlist4 = ["房", "子", "有", "点", "美"]
+        strlist5 = ["房", "子", "及", "其", "美"]
+        biglist = [strlist1, strlist2, strlist3, strlist4, strlist5]
+        bigentitylist = []
+        self.create_false_entitylist(biglist, bigentitylist)
+        for i in range(len(biglist)):
+            strlist = biglist[i]
+            entity_node = bigentitylist[i]
+            im.on_raw_data(strlist, entity_node)
+        #im.str_tree.say()
+        #im.model_node_tree.say()
+
+    def create_false_entitylist(self,biglist,bigentitylist):
+        for strlist in biglist:
+            str_name = strlist[0]+strlist[1]
+            adj = strlist[4]
+            vb = strlist[2]+strlist[3]
+            node1 = EntityNode(str_name)
+            adj_node = SpecialChildNode(adj)
+            vb_node = ValueNode(vb)
+            node1.link(adj_node,EdgeBase.TYPE_NORMAL)
+            adj_node.link(vb_node,EdgeBase.TYPE_NORMAL)
+            bigentitylist.append(node1)
 
     def compare_y(self):
         from .. import im,mt

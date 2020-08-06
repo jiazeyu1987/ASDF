@@ -27,6 +27,27 @@ class NodeBase:
         self.id = NodeBase.NODE_BASE_ID
         NodeBase.NODE_BASE_ID+=1
 
+    def set_value(self,val1):
+        self._value = val1
+
+    def has_edge(self, edge_type):
+        for edge in self.edge_list:
+            if (edge.type == edge_type):
+                return True
+        return False
+
+    def get_edge(self, edge_type):
+        for edge in self.edge_list:
+            if (edge.type == edge_type):
+                return edge
+        return None
+
+    def get_next_node(self):
+        from . import EdgeBase
+        for edge in self.edge_list:
+            if(edge.type!=EdgeBase.TYPE_NORMAL):
+                continue
+            return edge.node_to
 
     def get_edge_list(self):
         return self.edge_list

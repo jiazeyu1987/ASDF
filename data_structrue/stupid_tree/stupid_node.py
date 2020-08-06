@@ -6,6 +6,22 @@ class StupidNode(NodeBase):
         self.unique = False
         self.follow_edge_map = {}
 
+    def get_node(self,char):
+        if(char in self.follow_edge_map):
+            return self.follow_edge_map[char].node_to
+        else:
+            return None
+
+    def get_node_with_replace_nodes(self,char):
+        arr = []
+        if(char in self.follow_edge_map):
+            arr.append(self.follow_edge_map[char].node_to)
+        for key in self.follow_edge_map:
+            if(key[0]=="瓛"):
+                arr.append(self.follow_edge_map[key].node_to)
+        return arr
+
+
     def add_node(self,char1):
         from .stupid_edge import StupidEdge
         for edge_key in self.follow_edge_map:
@@ -70,7 +86,7 @@ class StupidNode(NodeBase):
                 min_node = node_v
         return min_node,min_depth
 
-    def get_str1(self,n):
+    def get_map_str1(self,n):
         head = n*"  "
         str1 = head
         str1 = str1  + ":" + self.get_value() + "\n"
@@ -78,14 +94,16 @@ class StupidNode(NodeBase):
             edge = self.follow_edge_map[edge_key]
             str1 = str1 + (n+1)*"  " +" "+ edge.strong.__str__()+"\n"
             node_to = edge.node_to
-            str1 = str1 + node_to.get_str1(n+1) + "\n"
+            str1 = str1 + node_to.get_map_str1(n+1) + "\n"
 
-        for edge_key in self.edge_list:
-            edge = edge_key
-            str1 = str1 + (n + 1) * "  " + " " + edge.strong.__str__() + "\n"
+        for edge in self.edge_list:
+
+            if(edge.type != EdgeBase.TYPE_WORD_TO_NODE):
+                continue
             node_to = edge.node_to
-            str1 = str1 + node_to.get_str1(n + 1) + "\n"
+            str1 = str1 + node_to.get_str1(n + 1,[EdgeBase.TYPE_NORMAL]) + "\n"
         return str1
 
+
     def say(self):
-        print(self.get_str1(0))
+        print(self.get_map_str1(0))
