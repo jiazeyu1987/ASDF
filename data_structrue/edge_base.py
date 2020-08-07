@@ -6,6 +6,7 @@ class EdgeBase:
     TYPE_LINK_ACTION = 4
     TYPE_BELONG = "belong"
     TYPE_CONTAIN = "contain"
+    TYPE_CHILD = "edge_child"
     TYPE_LINK_TO_2Dimension = "link_to_2"
     TYPE_LINK_TO_1Dimension = "link_to_1"
     TYPE_WORD_TO_NODE = "word_to_node"

@@ -90,41 +90,126 @@ class ImageManager:
             self.cached_entity_node = in_entity_node
             return
 
+        #首先查看是否可以读懂句子里的每个词语
         builded_model = self.get_build_model(strlist)
         cached_builded_model = self.get_build_model(self.cached_strlist)
+
+        #如果可以读懂句子里的每个词语
         if(len(builded_model)>0):
+            print("understand word:"+strlist.__str__())
+            #查看是否可以将这些词语组合成自己可以理解的模型
             r,exist_model = self.model_node_tree.get_model(builded_model,EdgeBase.TYPE_NODE_TO_MODEL)
             if(r):
-                replace_node0_models = self.find_replace_node_only_n(exist_model, 0)
-                replace_node1_models = self.find_replace_node_only_n(exist_model, 1)
+                print("understance model")
+                #replace_node0_models 是完全理解的模型
+                replace_node0_models = self.find_replace_node_only_n(exist_model, 0,builded_model)
+                # replace_node1_models 是可以简单类推的模型
+                replace_node1_models = self.find_replace_node_only_n(exist_model, 1,builded_model)
+
                 if(len(replace_node0_models)>0):
-                    #todo
-                    pass
+                    print("know well")
+                    replace_model = replace_node0_models[0]
+                    self.cached_strlist = strlist
+                    self.cached_entity_node = in_entity_node
+                    return
                 if(len(replace_node1_models)>0):
+                    print("like other model")
                     replace_model = replace_node1_models[0]
-                    ddddddddddd
-                    dd
-                    dictd
-                    dictd
-                    dictd
-                    dict
+                    replace_strlist = ""
+                    replace_node1,replace_node2 = self.get_replace_node(builded_model,replace_model)
+
+                    replace_entity_node = self.model_node_tree.get_extra_node(replace_model,EdgeBase.TYPE_NODE_TO_MODEL)
+                    m1 = replace_entity_node.copy_model([EdgeBase.TYPE_NORMAL])
+                    self.replace2(m1,replace_node1,replace_node2)
+                    req = self.equal_model(m1,in_entity_node)
+                    # for dd in replace_model:
+                    #     print(dd)
+                    # print(replace_entity_node)
+                    # print(m1)
+                    # print(self.cached_entity_node)
+                    # print(in_entity_node)
+                    print(req)
+                    #self.model_node_tree.say()
+                    if(req):
+                        replace_node_parent = self.model_node_tree.get_node_by_id(replace_node2)
+                        replace_node_parent.link(replace_node1.copy(),EdgeBase.TYPE_CONTAIN)
+                        replace_node_parent.print_base([EdgeBase.TYPE_CONTAIN])
+                        self.cached_strlist = strlist
+                        self.cached_entity_node = in_entity_node
+                        return
+
+
             self.model_node_tree.add_models(builded_model,in_entity_node,EdgeBase.TYPE_NODE_TO_MODEL)
             if(len(cached_builded_model)>0):
-                self.compare_node_model(cached_builded_model,builded_model,self.cached_entity_node,in_entity_node)
+                cached_node = self.cached_entity_node.copy_model([EdgeBase.TYPE_NORMAL])
+                in_node_copy = in_entity_node.copy_model([EdgeBase.TYPE_NORMAL])
+                self.compare_node_model(cached_builded_model,builded_model,cached_node,in_node_copy)
+                self.cached_strlist = strlist
+                self.cached_entity_node = in_entity_node
                 return
-        
-        self.compare_strlist_model(strlist,in_entity_node)
-        self.cached_strlist = strlist
-        self.cached_entity_node = in_entity_node
+        else:
+            print("don't know any thing")
+            self.compare_strlist_model(strlist,in_entity_node)
+            self.cached_strlist = strlist
+            self.cached_entity_node = in_entity_node
 
-    def find_replace_node_only_n(self,modelss,n):
+    def equal_model(self,m1,in_entity_mode):
+        if(m1.get_value()!=in_entity_mode.get_value()):
+            if(m1.contain(in_entity_mode)!=None):
+                return True
+            if(in_entity_mode.contain(m1)!=None):
+                return True
+            return False
+        for edge in m1.edge_list:
+            node_to = edge.node_to
+            has_flag = False
+            for edge2 in in_entity_mode.edge_list:
+                if(self.equal_model(node_to,edge2.node_to)==True):
+                    has_flag = True
+                    break
+            if(has_flag==False):
+                return False
+        return True
+
+    def replace2(self,model,rnode1,rnode2):
+        value1 = model.get_value()
+        rnodevalue = rnode2.get_value()
+        if(rnodevalue==value1):
+            model.set_value(rnode1.get_value())
+            return
+        for edge in model.edge_list:
+            node_to = edge.node_to
+            self.replace2(node_to,rnode1,rnode2)
+
+    def get_replace_node(self,builded_model,replace_model):
+        for node1 in builded_model:
+            has_flag = False
+            for node2 in replace_model:
+                if (node1.get_value() == node2.get_value()):
+                    has_flag = True
+                    break
+            if (has_flag == False):
+                for node2 in replace_model:
+                    if (node2.get_value()[0] == "瓛"):
+                        return node1,node2
+        return None,None
+
+    def find_replace_node_only_n(self,modelss,n,builded_model):
         arr = []
         for model in modelss:
             index=0
-            for node in model:
-                if(node.get_value()[0]=="瓛"):
-                    index+=1
-            if(index==n):
+
+            for i in range(len(model)):
+                node1 = model[i]
+                node2 = builded_model[i]
+                if(node1.get_value()==node2.get_value()):
+                    continue
+                if(node1.get_value()[0]=="瓛"):
+                    if(node1.contain(node2)!=None):
+                        continue
+                    else:
+                        index+=1
+            if (index == n):
                 arr.append(model)
         return arr
 
@@ -132,19 +217,20 @@ class ImageManager:
         node_map = {}
         self.mark_node_list(cached_node_list, node_map)
         self.mark_node_list(in_node_list, node_map)
+        #print(node_map)
         node_arr = []
+        #['房', '子', '非', '常', '美']
         for key in node_map:
             if (node_map[key] == 1):
                 node_arr.append(key)
         if (len(node_arr) == 2):
-            replace_node = ReplaceNode()
+            replace_node = NodeBase.create_node(NodeBase.VALUE_REPLACE+(NodeBase.NODE_BASE_ID+1).__str__())
             chain1 = self.create_replace_node_by_1(cached_node_list,node_arr,replace_node)
             chain2 = self.create_replace_node_by_1(in_node_list, node_arr, replace_node)
-            self.create_replace_node_by_2(cached_entity_node,node_arr,replace_node)
-            self.create_replace_node_by_2(in_entity_node, node_arr, replace_node)
+            self.create_replace_node_by_2(in_entity_node,node_arr,replace_node)
+            self.create_replace_node_by_2(cached_entity_node, node_arr, replace_node)
             self.model_node_tree.add_models(chain1.get_node_list(), cached_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
             self.model_node_tree.add_models(chain2.get_node_list(), in_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
-
             # print(chain1)
             # print(chain2)
             # print(in_entity_node)

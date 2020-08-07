@@ -2,7 +2,7 @@ from . import *
 import globalconfig as g
 class SimpleNodeChain:
     def __init__(self,list1:list=None):
-        self.head = SimpleNodeChainNode("Start")
+        self.head = NodeBase.create_node("媫Start")
         #current node
         self.current_node = self.head
         if(list1!=None):

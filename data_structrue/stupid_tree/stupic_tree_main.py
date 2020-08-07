@@ -3,7 +3,7 @@ from .. import *
 import globalconfig as g
 class StupidTree:
     def __init__(self):
-        self.root = StupidNode("擱")
+        self.root = NodeBase.create_node("擱")
 
     def get_linked_node_by_strlist(self,strlist,edge):
         cnode = self.root
@@ -31,6 +31,25 @@ class StupidTree:
             current_node = new_node
         current_node.link(final_node,final_edge_type)
 
+    def get_node_by_id(self,node1):
+        cnode = self.root
+        return cnode.get_node_by_id(node1)
+
+    def get_extra_node(self,nodelist,edge_type):
+        cnode = self.root
+        for node in nodelist:
+            has_flag = False
+            for key in cnode.follow_edge_map:
+                if(cnode.follow_edge_map[key].node_to.id==node.id):
+                    cnode=cnode.follow_edge_map[key].node_to
+                    has_flag = True
+                    break
+            if(has_flag==False):
+                return None
+        eedge = cnode.get_edge(edge_type)
+        if(eedge!=None):
+            return eedge.node_to
+        return None
 
     def get_model(self,nodelist,edge):
         return self._get_model(nodelist,edge,self.root)

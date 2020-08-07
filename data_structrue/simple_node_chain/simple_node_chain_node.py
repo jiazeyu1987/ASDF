@@ -14,6 +14,9 @@ class SimpleNodeChainNode(NodeBase):
     def remove_edge(self):
         self.follow_edge = None
 
+
+
+
     def replace_next_node(self,node1):
         from . import SimpleNodeChainEdge
         from .. import EdgeBase
