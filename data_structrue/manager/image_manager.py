@@ -83,45 +83,46 @@ class ImageManager:
         self.cached_strlist = None
 
 
-    def on_raw_data(self,strlist,in_entity_node):
-        print(strlist)
-        if(self.cached_strlist==None):
+
+    def on_raw_data(self, strlist, in_entity_node):
+        if (self.cached_strlist == None):
             self.cached_strlist = strlist
             self.cached_entity_node = in_entity_node
             return
 
-        #首先查看是否可以读懂句子里的每个词语
+        # 首先查看是否可以读懂句子里的每个词语
         builded_model = self.get_build_model(strlist)
         cached_builded_model = self.get_build_model(self.cached_strlist)
 
-        #如果可以读懂句子里的每个词语
-        if(len(builded_model)>0):
-            print("understand word:"+strlist.__str__())
-            #查看是否可以将这些词语组合成自己可以理解的模型
-            r,exist_model = self.model_node_tree.get_model(builded_model,EdgeBase.TYPE_NODE_TO_MODEL)
-            if(r):
+        # 如果可以读懂句子里的每个词语
+        if (len(builded_model) > 0):
+            print("understand word:" + strlist.__str__())
+            # 查看是否可以将这些词语组合成自己可以理解的模型
+            r, exist_model = self.model_node_tree.get_model(builded_model, EdgeBase.TYPE_NODE_TO_MODEL)
+            if (r):
                 print("understance model")
-                #replace_node0_models 是完全理解的模型
-                replace_node0_models = self.find_replace_node_only_n(exist_model, 0,builded_model)
+                # replace_node0_models 是完全理解的模型
+                replace_node0_models = self.find_replace_node_only_n(exist_model, 0, builded_model)
                 # replace_node1_models 是可以简单类推的模型
-                replace_node1_models = self.find_replace_node_only_n(exist_model, 1,builded_model)
+                replace_node1_models = self.find_replace_node_only_n(exist_model, 1, builded_model)
 
-                if(len(replace_node0_models)>0):
+                if (len(replace_node0_models) > 0):
                     print("know well")
                     replace_model = replace_node0_models[0]
                     self.cached_strlist = strlist
                     self.cached_entity_node = in_entity_node
                     return
-                if(len(replace_node1_models)>0):
+                if (len(replace_node1_models) > 0):
                     print("like other model")
                     replace_model = replace_node1_models[0]
                     replace_strlist = ""
-                    replace_node1,replace_node2 = self.get_replace_node(builded_model,replace_model)
+                    replace_node1, replace_node2 = self.get_replace_node(builded_model, replace_model)
 
-                    replace_entity_node = self.model_node_tree.get_extra_node(replace_model,EdgeBase.TYPE_NODE_TO_MODEL)
-                    m1 = replace_entity_node.copy_model([EdgeBase.TYPE_NORMAL])
-                    self.replace2(m1,replace_node1,replace_node2)
-                    req = self.equal_model(m1,in_entity_node)
+                    replace_entity_node = self.model_node_tree.get_extra_node(replace_model,
+                                                                              EdgeBase.TYPE_NODE_TO_MODEL)
+                    m1 = replace_entity_node.copy_node_with_child([EdgeBase.TYPE_NORMAL])
+                    self.replace2(m1, replace_node1, replace_node2)
+                    req = self.equal_model(m1, in_entity_node)
                     # for dd in replace_model:
                     #     print(dd)
                     # print(replace_entity_node)
@@ -129,29 +130,61 @@ class ImageManager:
                     # print(self.cached_entity_node)
                     # print(in_entity_node)
                     print(req)
-                    #self.model_node_tree.say()
-                    if(req):
+                    # self.model_node_tree.say()
+                    if (req):
                         replace_node_parent = self.model_node_tree.get_node_by_id(replace_node2)
-                        replace_node_parent.link(replace_node1.copy(),EdgeBase.TYPE_CONTAIN)
+                        replace_node_parent.link(replace_node1.copy(), EdgeBase.TYPE_CONTAIN)
                         replace_node_parent.print_base([EdgeBase.TYPE_CONTAIN])
                         self.cached_strlist = strlist
                         self.cached_entity_node = in_entity_node
                         return
 
-
-            self.model_node_tree.add_models(builded_model,in_entity_node,EdgeBase.TYPE_NODE_TO_MODEL)
-            if(len(cached_builded_model)>0):
-                cached_node = self.cached_entity_node.copy_model([EdgeBase.TYPE_NORMAL])
-                in_node_copy = in_entity_node.copy_model([EdgeBase.TYPE_NORMAL])
-                self.compare_node_model(cached_builded_model,builded_model,cached_node,in_node_copy)
+            self.model_node_tree.add_models(builded_model, in_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
+            if (len(cached_builded_model) > 0):
+                cached_node = self.cached_entity_node.copy_node_with_child([EdgeBase.TYPE_NORMAL])
+                in_node_copy = in_entity_node.copy_node_with_child([EdgeBase.TYPE_NORMAL])
+                self.compare_node_model(cached_builded_model, builded_model, cached_node, in_node_copy)
                 self.cached_strlist = strlist
                 self.cached_entity_node = in_entity_node
                 return
         else:
             print("don't know any thing")
-            self.compare_strlist_model(strlist,in_entity_node)
+            self.compare_strlist_model(strlist, in_entity_node)
             self.cached_strlist = strlist
             self.cached_entity_node = in_entity_node
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def equal_model(self,m1,in_entity_mode):
         if(m1.get_value()!=in_entity_mode.get_value()):
@@ -205,7 +238,7 @@ class ImageManager:
                 if(node1.get_value()==node2.get_value()):
                     continue
                 if(node1.get_value()[0]=="瓛"):
-                    if(node1.contain(node2)!=None):
+                    if(node1.get_1node(EdgeBase.TYPE_CONTAIN,node2.get_value(),True)!=None):
                         continue
                     else:
                         index+=1

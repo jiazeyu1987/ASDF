@@ -90,13 +90,36 @@ class NodeBase:
                 return edge
         return None
 
-    # 获取指定类型的一条edge的一个child
-    def get_1node(self,edge_type=EdgeBase.TYPE_NORMAL):
-        from . import EdgeBase
+    def get_alledge(self,edge_type):
+        arr = []
         for edge in self.edge_list:
-            if(edge.type!=edge_type):
-                continue
-            return edge.node_to
+            if(edge.type == edge_type):
+                arr.append(edge)
+        return arr
+
+    # 获取指定类型的一条edge的一个child
+    def get_1node(self,edge_type=EdgeBase.TYPE_NORMAL,target_value=None,all_reffer=False):
+        
+        if(all_reffer):
+            sub_nodes = self.get_all_reffer_nodes()
+            for node in sub_nodes:
+                for edge in node.edge_list:
+                    if (edge.type == edge_type):
+                        node_to = edge.node_to
+                        if(target_value!=None):
+                            if (target_value == node_to.get_value()):
+                                return node_to
+                        else:
+                            return node_to
+        else:
+            for edge in self.edge_list:
+                if(edge.type!=edge_type):
+                    continue
+                if(target_value!=None):
+                    if (target_value == node_to.get_value()):
+                        return node_to
+                else:
+                    return edge.node_to
 
     # 获取自己备份的一个copy节点
     def copy(self):
@@ -142,7 +165,7 @@ class NodeBase:
                 return node_to
         return None
 
-    
+    # 判断两个NODE是否完全相等，包括Child node
     def equal_node(self,node1,depth = 0):
         if(self.get_value()!=node1.get_value()):
             return False
@@ -156,57 +179,18 @@ class NodeBase:
                     return False
         return True
 
-    def link_map(self,node,edge_type,key):
-        from .edge_base import EdgeBase
-        edge = None
-        if(edge_type==EdgeBase.TYPE_NORMAL):
-            edge = EdgeBase(self,node)
-        else:
-            raise Exception("lakdsjflsakdfjlskfdj")
-        if(key in self.follow_edge_map):
-            self.follow_edge_map[key].add_weight(1)
-        else:
-            self.follow_edge_map[key] = edge
-
-    def get_strongest_edge(self):
-        max_edge = None
-        max_strong = -1
-        for key in self.follow_edge_map:
-            edge = self.follow_edge_map[key]
-            if(edge._weight>max_strong):
-                max_edge = edge
-        return max_edge
-
-    def get_first_node(self):
-        if(len(self.edge_list)==0):
-            return None
-        else:
-            return self.edge_list[0].node_to
 
 
-    def get_node_by_edge_type(self,edge_type):
+
+    #返回所有复合edgetype的nodes
+    def get_allnode(self,edge_type):
         arr = []
         for edge in self.edge_list:
             if(edge.type == edge_type):
                 arr.append(edge.node_to)
         return arr
 
-    def get_str1(self, n,edgelist,edgetype=""):
-        from . import EdgeBase
-        head = n * "        "
-        str1 = ""
-        str1 = str1 + head+self.type+","+self.get_value() + "\n"
-        #print(self._value)
-        for edge in self.edge_list:
-            if((edge.type in edgelist) == False):
-                continue
-            #print("1",self._value,edge.type,edge.node_to.get_value())
-            node_to = edge.node_to
-            str1 = str1+head+node_to.get_str1(n+1,edgelist,edge.type)
-
-
-        return str1
-
+    # 返回所有与自己相关的reffer node
     def get_all_reffer_nodes(self):
         arr = []
         base_node = self.get_base_node()
@@ -216,146 +200,68 @@ class NodeBase:
         return arr
 
 
-    def contain(self,node1):
-        from . import EdgeBase
-        sub_nodes = self.get_all_reffer_nodes()
-        for node in sub_nodes:
-            for edge in node.edge_list:
-                if(edge.type == EdgeBase.TYPE_CONTAIN):
-                    node_to = edge.node_to
-                    if(node1.get_value()==node_to.get_value()):
-                        return node_to
-        return None
 
-    def copy_model(self,edgelist):
-        from . import EdgeBase
+
+    # copy node 以及edgelist里的child
+    def copy_node_with_child(self,edgelist):
         node1 = self.copy()
         for edge in self.edge_list:
             if(edge.type in edgelist):
-                node_to = edge.node_to.copy_model(edgelist)
+                node_to = edge.node_to.copy_node_with_child(edgelist)
                 node1.link(node_to,edge.type)
         return node1
 
-    def __str__(self):
-        from . import EdgeBase
-        return self.get_str1(0,[EdgeBase.TYPE_NORMAL])
-
-    def print(self,edgelist):
-        print(self.get_str1(0,edgelist))
 
 
-
-
-    def print_base(self,edgelist):
-        str1 = "base_node info:" + self.get_value() + " " + "\n"
-        nodes = self.get_all_reffer_nodes()
-        for node in nodes:
-            str1 = str1 + "" + node.type + node.id.__str__() + "\n"
-            for edge in node.edge_list:
-                if((edge.type in edgelist) == False):
-                    continue
-                node_to = edge.node_to
-                str1 = str1+""+node_to.get_str1(1,edgelist,edge.type)
-        print(str1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-    def get_node(self,char):
-        if(char in self.follow_edge_map):
-            return self.follow_edge_map[char].node_to
+    # follow_edge_map 里的edge 为normal类型
+    def link_map(self, node, edge_type, key):
+        edge = EdgeBase(self, node)
+        if (key in self.follow_edge_map):
+            self.follow_edge_map[key].add_weight(1)
         else:
-            return None
+            self.follow_edge_map[key] = edge
 
-    def get_node_with_replace_nodes(self,char):
-        arr = []
-        if(char in self.follow_edge_map):
-            arr.append(self.follow_edge_map[char].node_to)
-        for key in self.follow_edge_map:
-            if(key[0]=="瓛"):
-                arr.append(self.follow_edge_map[key].node_to)
-        return arr
-
-
-    def add_node(self,char1):
-        from . import EdgeBase
-        for edge_key in self.follow_edge_map:
-            edge = self.follow_edge_map[edge_key]
-            if(edge.node_to.get_value()==char1):
-                return edge.node_to
-            else:
-                pass
+    def add_map_node(self,char1):
+        
+        tnode = self.get_map_node(char1)
+        if(tnode!=None):
+            return tnode
         node_new = NodeBase.create_node(char1)
         edge = EdgeBase(self,node_new)
         self.follow_edge_map[char1] = edge
         return node_new
 
-    def add_action(self,action,node,entity_node):
-        node1 = self.get_action_node(action)
-        edge_weight1 = self.link(node1,EdgeBase.TYPE_LINK_ACTION)
 
-        node2 = node1.get_node_by_edgetype_in_edgelist(node.get_value(),EdgeBase.TYPE_LINK_ACTION)
-        if(node2==None):
-            node2 = node.copy()
-        edge_weight2 = node1.link(node2, EdgeBase.TYPE_LINK_ACTION)
 
-        edge_weight3 = 0
-        if(entity_node!=None):
-            node3 = node2.get_node_by_edgetype_in_edgelist(entity_node.get_value(), EdgeBase.TYPE_LINK_ACTION)
-            if (node3 == None):
-                node3 = entity_node.copy()
-            edge_weight3 = node2.link(node3, EdgeBase.TYPE_LINK_ACTION)
-        print(edge_weight1,edge_weight2,edge_weight3)
 
-    def get_action_node(self,action):
-        node1 = self.get_node_by_edgetype_in_edgelist(action,EdgeBase.TYPE_LINK_ACTION)
-        if(node1==None):
-            node1=NodeBase(action)
+    def get_map_node(self,char):
+        if(char in self.follow_edge_map):
+            return self.follow_edge_map[char].node_to
         else:
-            pass
-        return node1
+            return None
 
-    def get_one1_action(self):
-        for edge in self.edge_list:
-            if(edge.type == EdgeBase.TYPE_LINK_ACTION):
-                return edge
-        return None
 
-    def get_nearest(self,value1,depth=1):
-        for edge_key in self.follow_edge_map:
-            edge = self.follow_edge_map[edge_key]
-            node_to = edge.node_to
-            if(node_to.get_value()==value1):
-                return node_to,depth
 
-        min_depth = 99999
-        min_node = None
-        for edge_key in self.follow_edge_map:
-            edge = self.follow_edge_map[edge_key]
-            node_to = edge.node_to
-            node_v,new_depth = node_to.get_nearest(value1,depth+1)
-            if(new_depth<min_depth):
-                min_depth = new_depth
-                min_node = node_v
-        return min_node,min_depth
 
-    def get_node_by_id(self,node1):
+    def get_map_node_with_startchar(self,value,startchar):
+        arr = []
+        if(value in self.follow_edge_map):
+            arr.append(self.follow_edge_map[value].node_to)
+        for key in self.follow_edge_map:
+            if(key[0]==startchar):
+                arr.append(self.follow_edge_map[key].node_to)
+        return arr
+
+
+
+    def get_map_node_by_id(self,node1):
         for key in self.follow_edge_map:
             node_to = self.follow_edge_map[key].node_to
             if (node_to.id == node1.id):
                 return node_to
             else:
-                if(node_to.get_node_by_id(node1)!=None):
-                    return node_to.get_node_by_id(node1)
+                if(node_to.get_map_node_by_id(node1)!=None):
+                    return node_to.get_map_node_by_id(node1)
         return None
 
     def get_map_str1(self,n):
@@ -377,11 +283,42 @@ class NodeBase:
         return str1
 
 
-    def add_node_by_value(self,node1):
-        if(node1.get_value()==self._value):
-            raise Exception(node1.get_value())
-        self.current_node.link(node1,EdgeBase.TYPE_CONTAIN)
-        node1.link(self,EdgeBase.TYPE_BELONG)
+    def get_str1(self, n,edgelist,edgetype=""):
+        
+        head = n * "        "
+        str1 = ""
+        str1 = str1 + head+self.type+","+self.get_value() + "\n"
+        #print(self._value)
+        for edge in self.edge_list:
+            if((edge.type in edgelist) == False):
+                continue
+            #print("1",self._value,edge.type,edge.node_to.get_value())
+            node_to = edge.node_to
+            str1 = str1+head+node_to.get_str1(n+1,edgelist,edge.type)
 
-    def say(self):
+
+        return str1
+
+
+
+    def __str__(self):
+        
+        return self.get_str1(0,[EdgeBase.TYPE_NORMAL])
+
+    def print(self,edgelist):
+        print(self.get_str1(0,edgelist))
+
+    def print_map(self):
         print(self.get_map_str1(0))
+
+    def print_base(self,edgelist):
+        str1 = "base_node info:" + self.get_value() + " " + "\n"
+        nodes = self.get_all_reffer_nodes()
+        for node in nodes:
+            str1 = str1 + "" + node.type + node.id.__str__() + "\n"
+            for edge in node.edge_list:
+                if((edge.type in edgelist) == False):
+                    continue
+                node_to = edge.node_to
+                str1 = str1+""+node_to.get_str1(1,edgelist,edge.type)
+        print(str1)

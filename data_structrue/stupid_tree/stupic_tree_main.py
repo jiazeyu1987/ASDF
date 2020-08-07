@@ -14,7 +14,7 @@ class StupidTree:
         for i in range(len(strlist)):
             char = strlist[i]
             index+=1
-            next_node = cnode.get_node(char)
+            next_node = cnode.add_map_node(char)
             if(next_node==None):
                 return node_arr,len_arr
             nedge = next_node.get_1edge(edge)
@@ -27,13 +27,13 @@ class StupidTree:
     def add_value(self,arrlist,final_node,final_edge_type):
         current_node = self.root
         for char in arrlist:
-            new_node = current_node.add_node(char)
+            new_node = current_node.add_map_node(char)
             current_node = new_node
         current_node.link(final_node,final_edge_type)
 
     def get_node_by_id(self,node1):
         cnode = self.root
-        return cnode.get_node_by_id(node1)
+        return cnode.get_map_node_by_id(node1)
 
     def get_extra_node(self,nodelist,edge_type):
         cnode = self.root
@@ -51,6 +51,8 @@ class StupidTree:
             return eedge.node_to
         return None
 
+
+
     def get_model(self,nodelist,edge):
         return self._get_model(nodelist,edge,self.root)
 
@@ -60,7 +62,7 @@ class StupidTree:
             if (nedge != None):
                 return True,[[]]
         node = nodelist[0]
-        oknodes = tree_current_node.get_node_with_replace_nodes(node.get_value())
+        oknodes = tree_current_node.get_map_node_with_startchar(node.get_value(),NodeBase.VALUE_REPLACE)
         if(len(oknodes)==0):
             return False,None
         else:
@@ -82,7 +84,7 @@ class StupidTree:
         current_node = self.root
         for node in nodelist:
             char = node.get_value()
-            new_node = current_node.add_node(char)
+            new_node = current_node.add_map_node(char)
             current_node = new_node
         current_node.link(final_node, final_edge_type)
 
@@ -106,4 +108,4 @@ class StupidTree:
 
 
     def say(self):
-        self.root.say()
+        self.root.print_map()

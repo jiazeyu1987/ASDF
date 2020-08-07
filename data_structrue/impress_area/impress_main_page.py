@@ -1,4 +1,4 @@
-import numpy as np
+#import numpy as np
 class ImpressMainPage:
     def __init__(self):
         self._width = 20
@@ -7,7 +7,7 @@ class ImpressMainPage:
         self._page_index = 0
         self._row_index = 0
         self._column_index = 0
-        self.area = (np.zeros((self._depth, self._height,self._width), np.dtype([("value",np.str_,40),("type",np.int32),("mark",np.int32)])))
+#        self.area = (np.zeros((self._depth, self._height,self._width), np.dtype([("value",np.str_,40),("type",np.int32),("mark",np.int32)])))
 
 
     def print_page(self):
