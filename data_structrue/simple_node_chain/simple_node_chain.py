@@ -2,19 +2,33 @@ from . import *
 import globalconfig as g
 class SimpleNodeChain:
     def __init__(self,list1:list=None):
-        self.head = None
+        self.head = NodeBase.create_node("媫Start")
         #current node
-        self.current_node = None
+        self.current_node = self.head
         if(list1!=None):
             self.enter_node_list(list1)
 
     def get_head(self)->SimpleNodeChainNode:
         return self.head
 
+
+    def get_node_list(self):
+        cnode = self.get_head()
+        arr = []
+        while True:
+            cnode = cnode.get_1node()
+            if(cnode==None):
+                return arr
+            else:
+                arr.append(cnode)
+
+    def add_node(self,new_node:SimpleNodeChainNode):
+        self.current_node.link(new_node,EdgeBase.TYPE_NORMAL)
+        self.current_node = new_node
+
     def change_shape(self,node1:SimpleNodeChainNode,len1:int,replace_value:str):
         replace_node = ReplaceNode(replace_value)
         cnode = self.get_head()
-        replace_node = ReplaceNode(replace_value)
         index = -1
         if(cnode==node1):
             edge = SimpleNodeChainEdge(replace_node, cnode)
@@ -24,13 +38,13 @@ class SimpleNodeChain:
         while True:
             if(cnode==None):
                 break
-            next_node = cnode.get_next_node()
+            next_node = cnode.get_1node()
             if(index!=-1):
                 index+=1
                 if(index==len1):
                     cnode.remove_edge()
                     new_edge = SimpleNodeChainEdge(replace_node, next_node)
-                    replace_node.follow_edge = new_edge
+                    replace_node.edge_list.append(new_edge)
             if(next_node==node1):
                 cnode.replace_next_node(replace_node)
                 index=0
@@ -46,13 +60,15 @@ class SimpleNodeChain:
         max = 0
         target_node = None
         while True:
-            if(tnode.value==cnode.value):
+            if(tnode.get_value()==cnode.get_value()):
                 rn = self.equal_chain_len(cnode,tnode)
+                if(cnode.get_value()=="hurge3"):
+                    print("FFFFFFFFFFFFFF",cnode.get_value(),t_node.value(),rn)
                 if(rn>max):
                     max = rn
                     target_node = tnode
 
-            tnode = tnode.get_next_node()
+            tnode = tnode.get_1node()
             if(tnode==None):
                 break
         return max,target_node
@@ -62,11 +78,11 @@ class SimpleNodeChain:
         cnode = start_node
         tnode = start_node2
         while True:
-            if (cnode.value != tnode.value):
+            if (cnode.get_value() != tnode.get_value()):
                 return index
             index+=1
-            cnode = cnode.get_next_node()
-            tnode = tnode.get_next_node()
+            cnode = cnode.get_1node()
+            tnode = tnode.get_1node()
             if(cnode==None or tnode==None):
                 return index
 
@@ -76,27 +92,28 @@ class SimpleNodeChain:
         while True:
             if(cnode==None):
                 break
-            next_node = cnode.get_next_node()
+            next_node = cnode.get_1node()
             if(next_node == None):
                 break
 
-            nf = cnode.value==edge.node_from.value
-            tf = next_node.value==edge.node_to.value
+            nf = cnode.get_value()==edge.node_from.get_value()
+            tf = next_node.get_value()==edge.node_to.get_value()
             if(nf and tf):
                 return cnode,next_node
             cnode = next_node
         return None,None
 
     def add_zhanwei_node(self):
+        from .. import EdgeBase
         if(self.head==None):
             self.head = SimpleNodeChainNode(g.replace_symbol)
             self.current_node = self.head
         else:
-            if(self.current_node.value == g.replace_symbol):
+            if(self.current_node.get_value() == g.replace_symbol):
                 return
             else:
                 new_node = self.new(g.replace_symbol)
-                self.link(self.current_node, new_node)
+                self.current_node.link(new_node,EdgeBase.TYPE_NORMAL)
                 self.current_node = new_node
 
 
@@ -118,9 +135,9 @@ class SimpleNodeChain:
 
 
     #从receiver/eye异步接收到的数据
-    def on_data_enter(self,char_str):
-        for char1 in char_str:
-            self.enter_node_val(char1)
+    def add_nodes_by_charlist(self,charlist):
+        for char1 in charlist:
+            self.add_new_node_by_char(char1)
 
 
     def __str__(self):
@@ -134,23 +151,26 @@ class SimpleNodeChain:
                 break
             index += 1
             str1 = str1 + tmp_node.get_value() + " - "
-            if (tmp_node.follow_edge == None):
+            if (tmp_node.get_1node() == None):
                 break
-            tmp_node = tmp_node.follow_edge.node_to
+            tmp_node = tmp_node.get_1node()
         return str1
 
     def enter_node_list(self,vallist:list):
         for i in range(len(vallist)):
-            self.enter_node_val(vallist[i])
+            self.add_new_node_by_char(vallist[i])
 
-    def enter_node_val(self,val):
+    def add_new_node_by_char(self,val):
+        from .. import EdgeBase
         if(self.head==None):
             self.head = self.new(val)
             self.current_node = self.head
         else:
             new_node = self.new(val)
-            self.link(self.current_node,new_node)
+            self.current_node.link(new_node,EdgeBase.TYPE_NORMAL)
             self.current_node = new_node
+
+
 
     def get_str(self):
         current = self.get_head()
@@ -159,7 +179,7 @@ class SimpleNodeChain:
             if current==None:
                 break
             str1 = str1+current.get_value()
-            current = current.get_next_node()
+            current = current.get_1node()
         return str1
 
     def get_key(self):
@@ -171,14 +191,11 @@ class SimpleNodeChain:
                 break
             str1 = str1 + current.get_value()
             arr.append(current.get_value())
-            current = current.get_next_node()
+            current = current.get_1node()
         return arr
 
 
-    def link(self,node_from:SimpleNodeChainNode,node_to:SimpleNodeChainNode):
-        from .simple_node_chain_edge import SimpleNodeChainEdge
-        SimpleNodeChainEdge = SimpleNodeChainEdge(node_from,node_to)
-        node_from.follow_edge= SimpleNodeChainEdge
+
 
 
 

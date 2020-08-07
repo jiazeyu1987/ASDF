@@ -1,7 +1,7 @@
 from .log import *
-
-from .node_base import *
 from .edge_base import *
+from .node_base import *
+
 from .simple_node_chain import *
 from .inner_data import *
 from .entity import *

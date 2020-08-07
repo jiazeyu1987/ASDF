@@ -19,18 +19,3 @@ class ValueNode(NodeBase):
         if(self.get_value()!=node1.get_value()):
             return [CompareValue(EntityNode.COMPARE_UNLIKE,self,node1,entity1,entity2)]
 
-    def get_str1(self,n):
-        head = n*"  "
-        str1 = head+"ValueNode:"
-        str1 = str1  + ":" + self.get_value() + "\n"
-        for key in self.follow_edge_map:
-            edge = self.follow_edge_map[key]
-            node_to = edge.node_to
-            ctr = node_to.get_str1(n+1)
-            str1 = str1  + head +  ctr + "\n"
-
-        for edge in self.edge_list:
-            node_to = edge.node_to
-            ctr = node_to.get_str1(n + 1)
-            str1 = str1 + head + ctr + "\n"
-        return str1
