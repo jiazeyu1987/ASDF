@@ -24,9 +24,8 @@ class NodeBase:
         if(flag!="lfljaskdfj"):
             raise Exception("ffffff")
         self._value = value
-        self.strong = 0
+        self._weight = 0
         self.type = "base"
-        #self.follow_edge_map = {}
         self.edge_list = []
         self.id = NodeBase.NODE_BASE_ID
         NodeBase.NODE_BASE_ID+=1
@@ -34,6 +33,8 @@ class NodeBase:
         #for stupid tree
         self.follow_edge_map = {}
 
+
+    # 返回基础节点的复制引用
     @staticmethod
     def create_node(value):
         if(value in NodeBase.all_map):
@@ -43,71 +44,81 @@ class NodeBase:
         node1 = NodeBase.all_map[value]
         nc = NodeBase(value,"lfljaskdfj")
         nc.type = node1.type
-        nc.strong = node1.strong
+        nc._weight = node1._weight
         nc.type = "child"
         node1.link(nc, EdgeBase.TYPE_CHILD,1)
         return nc
 
-    @staticmethod
-    def get_base_node(value):
-        if (value in NodeBase.all_map):
+    # 获取基础节点
+    def get_base_node(self):
+        if (self._value in NodeBase.all_map):
             pass
         else:
-            NodeBase.all_map[value] = NodeBase(value, "lfljaskdfj")
-        node1 = NodeBase.all_map[value]
+            NodeBase.all_map[self._value] = NodeBase(self._value, "lfljaskdfj")
+        node1 = NodeBase.all_map[self._value]
         return node1
 
+    # 当更换节点的时候会用到
+    def replace_node(self,val1):
+        base_node = self.get_base_node()
+        base_node.unlink(self)
 
-    def set_value(self,val1):
         self._value = val1
+        base_node = self.get_base_node()
+        base_node.link(self,NodeBase.TYPE_CHILD,1)
 
+    # 断开自己与目标节点的连接
+    def unlink(self,node1):
+        for edge in self.edge_list:
+            if(edge.node_to.id == node1.id):
+                self.edge_list.remove(edge)
+                return True
+        return False
+
+    # 判断自己是否有指定类型的edge
     def has_edge(self, edge_type):
         for edge in self.edge_list:
             if (edge.type == edge_type):
                 return True
         return False
 
-    def get_edge(self, edge_type):
+
+    # 获取指定类型的一条edge
+    def get_1edge(self, edge_type):
         for edge in self.edge_list:
             if (edge.type == edge_type):
                 return edge
         return None
 
-    def get_next_node(self):
+    # 获取指定类型的一条edge的一个child
+    def get_1node(self,edge_type=EdgeBase.TYPE_NORMAL):
         from . import EdgeBase
         for edge in self.edge_list:
-            if(edge.type!=EdgeBase.TYPE_NORMAL):
+            if(edge.type!=edge_type):
                 continue
             return edge.node_to
 
-    def get_edge_list(self):
-        return self.edge_list
-
+    # 获取自己备份的一个copy节点
     def copy(self):
         node = NodeBase.create_node(self.get_value())
-        node.strong = self.strong
+        node._weight = self._weight
         node.type = self.type
         return node
 
-    def get_next_node_by_edge(self,edge_type):
-        for edge in self.edge_list:
-            if(edge.type == edge_type):
-                return edge.node_to
-        return None
 
-    @staticmethod
-    def create_default_value()->str:
-        return "摭"+NodeBase.NODE_BASE_ID.__str__()
 
+    # 加权重
     def add_weight(self,weight):
-        self.strong+=weight
+        self._weight+=weight
 
+    # 减权重
     def lose_weight(self,weight):
-        self.strong-=weight
+        self._weight-=weight
 
     def get_value(self)->str:
         return self._value.__str__()
 
+    # 除非特殊原因，不能用基点连接基点，不能自己连接自己
     def link(self,node,edge_type,type=2):
         if(type==2):
             if(self.type=="base"):
@@ -117,43 +128,21 @@ class NodeBase:
             if(node.id==self.id):
                 raise Exception(node.get_value())
 
-        for edge in self.edge_list:
-            node_to = edge.node_to
-            if(node_to.id==node.id and edge.type == edge_type):
-                edge.add_weight(1)
-                node_to.add_weight(1)
-                return edge.strong
         edge = EdgeBase(self, node)
         edge.type = edge_type
         edge.add_weight(1)
         self.edge_list.append(edge)
-        return edge.strong
+        return edge._weight
 
-    def get_node_by_edgetype_in_edgelist(self,value1,type):
+    # 通过节点内容与edge类型来唯一确认一个节点
+    def get_node(self,node_value,edge_type):
         for edge in self.edge_list:
             node_to = edge.node_to
-            if(edge.type==type and node_to.get_value()==value1):
+            if(edge.type==edge_type and node_to.get_value()==node_value):
                 return node_to
         return None
 
-    def add_voice_child(self,entity_node,edge_type):
-        self.link(entity_node,edge_type)
-
-    def get_voice_child(self,entity_node,edge_type):
-        for edge in self.edge_list:
-            node_to = edge.node_to
-            if(node_to.equal_node(entity_node)):
-                return node_to
-        return None
-
-    def add_voice_child_weight(self,child):
-        for edge in self.edge_list:
-            node_to = edge.node_to
-            if(node_to==child):
-                edge.add_weight(1)
-                node_to.add_weight(1)
-                return
-
+    
     def equal_node(self,node1,depth = 0):
         if(self.get_value()!=node1.get_value()):
             return False
@@ -184,7 +173,7 @@ class NodeBase:
         max_strong = -1
         for key in self.follow_edge_map:
             edge = self.follow_edge_map[key]
-            if(edge.strong>max_strong):
+            if(edge._weight>max_strong):
                 max_edge = edge
         return max_edge
 
@@ -220,7 +209,7 @@ class NodeBase:
 
     def get_all_reffer_nodes(self):
         arr = []
-        base_node = NodeBase.get_base_node(self.get_value())
+        base_node = self.get_base_node()
         for edge in base_node.edge_list:
             if(edge.type == EdgeBase.TYPE_CHILD):
                 arr.append(edge.node_to)
@@ -375,7 +364,7 @@ class NodeBase:
         str1 = str1  + ":" + self.get_value() + "\n"
         for edge_key in self.follow_edge_map:
             edge = self.follow_edge_map[edge_key]
-            str1 = str1 + (n+1)*"  " +" "+ edge.strong.__str__()+"\n"
+            str1 = str1 + (n+1)*"  " +" "+ edge._weight.__str__()+"\n"
             node_to = edge.node_to
             str1 = str1 + node_to.get_map_str1(n+1) + "\n"
 

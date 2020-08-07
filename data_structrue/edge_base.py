@@ -15,16 +15,16 @@ class EdgeBase:
     def __init__(self,node_from,node_to,strong=0):
         self.node_from = node_from
         self.node_to = node_to
-        self.strong = strong
+        self._weight = strong
         self.type = EdgeBase.TYPE_NORMAL
         self.id = EdgeBase.EDGE_ID
         EdgeBase.EDGE_ID+=1
 
     def add_weight(self,weight):
-        self.strong+=weight
+        self._weight+=weight
 
     def lose_weight(self,weight):
-        self.strong-=weight
+        self._weight-=weight
 
 
     def value_equal(self,edge):
@@ -34,7 +34,7 @@ class EdgeBase:
         return False
 
     def __str__(self):
-        str1 = "edge info weight:"+self.strong.__str__()
+        str1 = "edge info weight:"+self._weight.__str__()
         str1 = str1+"   "+self.node_from.get_value().__str__()
         str1 = str1+" to "+self.node_to. get_value().__str__()
         return str1

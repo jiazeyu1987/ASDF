@@ -175,7 +175,7 @@ class ImageManager:
         value1 = model.get_value()
         rnodevalue = rnode2.get_value()
         if(rnodevalue==value1):
-            model.set_value(rnode1.get_value())
+            model.replace_node(rnode1.get_value())
             return
         for edge in model.edge_list:
             node_to = edge.node_to
@@ -239,7 +239,7 @@ class ImageManager:
 
     def create_replace_node_by_2(self,in_entity_node,node_arr,replace_node):
         if(in_entity_node.get_value() in node_arr):
-            in_entity_node.set_value(replace_node.get_value())
+            in_entity_node.replace_node(replace_node.get_value())
         for edge in in_entity_node.edge_list:
             self.create_replace_node_by_2(edge.node_to,node_arr,replace_node)
 

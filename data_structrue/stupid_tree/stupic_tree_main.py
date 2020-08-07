@@ -17,7 +17,7 @@ class StupidTree:
             next_node = cnode.get_node(char)
             if(next_node==None):
                 return node_arr,len_arr
-            nedge = next_node.get_edge(edge)
+            nedge = next_node.get_1edge(edge)
             if(nedge!=None):
                 node_arr.append(nedge.node_to)
                 len_arr.append(index)
@@ -46,7 +46,7 @@ class StupidTree:
                     break
             if(has_flag==False):
                 return None
-        eedge = cnode.get_edge(edge_type)
+        eedge = cnode.get_1edge(edge_type)
         if(eedge!=None):
             return eedge.node_to
         return None
@@ -56,7 +56,7 @@ class StupidTree:
 
     def _get_model(self,nodelist,edge,tree_current_node):
         if(len(nodelist)==0):
-            nedge = tree_current_node.get_edge(edge)
+            nedge = tree_current_node.get_1edge(edge)
             if (nedge != None):
                 return True,[[]]
         node = nodelist[0]

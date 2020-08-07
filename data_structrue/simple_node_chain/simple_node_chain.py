@@ -16,7 +16,7 @@ class SimpleNodeChain:
         cnode = self.get_head()
         arr = []
         while True:
-            cnode = cnode.get_next_node()
+            cnode = cnode.get_1node()
             if(cnode==None):
                 return arr
             else:
@@ -38,7 +38,7 @@ class SimpleNodeChain:
         while True:
             if(cnode==None):
                 break
-            next_node = cnode.get_next_node()
+            next_node = cnode.get_1node()
             if(index!=-1):
                 index+=1
                 if(index==len1):
@@ -68,7 +68,7 @@ class SimpleNodeChain:
                     max = rn
                     target_node = tnode
 
-            tnode = tnode.get_next_node()
+            tnode = tnode.get_1node()
             if(tnode==None):
                 break
         return max,target_node
@@ -81,8 +81,8 @@ class SimpleNodeChain:
             if (cnode.get_value() != tnode.get_value()):
                 return index
             index+=1
-            cnode = cnode.get_next_node()
-            tnode = tnode.get_next_node()
+            cnode = cnode.get_1node()
+            tnode = tnode.get_1node()
             if(cnode==None or tnode==None):
                 return index
 
@@ -92,7 +92,7 @@ class SimpleNodeChain:
         while True:
             if(cnode==None):
                 break
-            next_node = cnode.get_next_node()
+            next_node = cnode.get_1node()
             if(next_node == None):
                 break
 
@@ -151,9 +151,9 @@ class SimpleNodeChain:
                 break
             index += 1
             str1 = str1 + tmp_node.get_value() + " - "
-            if (tmp_node.get_next_node() == None):
+            if (tmp_node.get_1node() == None):
                 break
-            tmp_node = tmp_node.get_next_node()
+            tmp_node = tmp_node.get_1node()
         return str1
 
     def enter_node_list(self,vallist:list):
@@ -179,7 +179,7 @@ class SimpleNodeChain:
             if current==None:
                 break
             str1 = str1+current.get_value()
-            current = current.get_next_node()
+            current = current.get_1node()
         return str1
 
     def get_key(self):
@@ -191,7 +191,7 @@ class SimpleNodeChain:
                 break
             str1 = str1 + current.get_value()
             arr.append(current.get_value())
-            current = current.get_next_node()
+            current = current.get_1node()
         return arr
 
 
