@@ -14,7 +14,8 @@ class StupidTree:
         for i in range(len(strlist)):
             char = strlist[i]
             index+=1
-            next_node = cnode.add_map_node(char)
+            #next_node = cnode.link(NodeBase.create_node(char),EdgeBase.TYPE_NORMAL,True)
+            next_node = cnode.get_1node(EdgeBase.TYPE_NORMAL,char)
             if(next_node==None):
                 return node_arr,len_arr
             nedge = next_node.get_1edge(edge)
@@ -27,21 +28,23 @@ class StupidTree:
     def add_value(self,arrlist,final_node,final_edge_type):
         current_node = self.root
         for char in arrlist:
-            new_node = current_node.add_map_node(char)
+            new_node = current_node.link(NodeBase.create_node(char),EdgeBase.TYPE_NORMAL,True)
             current_node = new_node
         current_node.link(final_node,final_edge_type)
 
     def get_node_by_id(self,node1):
         cnode = self.root
-        return cnode.get_map_node_by_id(node1)
+        return cnode.get_1node_by_id(node1.id)
 
     def get_extra_node(self,nodelist,edge_type):
         cnode = self.root
         for node in nodelist:
             has_flag = False
-            for key in cnode.follow_edge_map:
-                if(cnode.follow_edge_map[key].node_to.id==node.id):
-                    cnode=cnode.follow_edge_map[key].node_to
+            for edge in cnode.edge_list:
+                node_to = edge.node_to
+                key = node_to.get_value()
+                if(node_to.id==node.id):
+                    cnode=node_to
                     has_flag = True
                     break
             if(has_flag==False):
@@ -53,23 +56,23 @@ class StupidTree:
 
 
 
-    def get_model(self,nodelist,edge):
-        return self._get_model(nodelist,edge,self.root)
+    def get_model(self,nodelist):
+        return self._get_model(nodelist,self.root)
 
-    def _get_model(self,nodelist,edge,tree_current_node):
+    def _get_model(self,nodelist,tree_current_node):
         if(len(nodelist)==0):
-            nedge = tree_current_node.get_1edge(edge)
+            nedge = tree_current_node.get_1edge(EdgeBase.TYPE_REFFER)
             if (nedge != None):
                 return True,[[]]
         node = nodelist[0]
-        oknodes = tree_current_node.get_map_node_with_startchar(node.get_value(),NodeBase.VALUE_REPLACE)
+        oknodes = tree_current_node.get_allnode_with_startchar(node.get_value(),NodeBase.VALUE_REPLACE)
         if(len(oknodes)==0):
             return False,None
         else:
             alllist = []
             has_flag = False
             for node1 in oknodes:
-                r,list1 = self._get_model(nodelist[1:],edge,node1)
+                r,list1 = self._get_model(nodelist[1:],node1)
                 if(r):
                     has_flag = True
                     for listsub in list1:
@@ -84,20 +87,10 @@ class StupidTree:
         current_node = self.root
         for node in nodelist:
             char = node.get_value()
-            new_node = current_node.add_map_node(char)
+            new_node = current_node.link(NodeBase.create_node(char),EdgeBase.TYPE_NORMAL,True)
             current_node = new_node
         current_node.link(final_node, final_edge_type)
 
-        # uni.unique = True
-    def add_chain(self,chain:SimpleNodeChain):
-        head = chain.get_head()
-        current_node = self.root
-        while True:
-            head = head.get_next_node()
-            if(head==None):
-                break
-            new_node = current_node.add_node(head.get_value())
-            current_node = new_node
 
 
 

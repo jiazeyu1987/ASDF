@@ -69,8 +69,8 @@ class EntityNodeCompareTool():
         #     strlist = biglist[i]
         #     entity_node = bigentitylist[i]
         #     im.on_raw_data(strlist, entity_node)
-        #im.str_tree.say()
-        #im.model_node_tree.say()
+        #im.str_tree.root.print([EdgeBase.TYPE_NORMAL,EdgeBase.TYPE_REFFER])
+        #im.model_node_tree.root.print([EdgeBase.TYPE_NORMAL,EdgeBase.TYPE_REFFER])
 
     def create_false_entitylist(self,biglist,bigentitylist):
         for strlist in biglist:

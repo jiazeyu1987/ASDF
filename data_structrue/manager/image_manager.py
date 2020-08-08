@@ -98,7 +98,8 @@ class ImageManager:
         if (len(builded_model) > 0):
             print("understand word:" + strlist.__str__())
             # 查看是否可以将这些词语组合成自己可以理解的模型
-            r, exist_model = self.model_node_tree.get_model(builded_model, EdgeBase.TYPE_NODE_TO_MODEL)
+            r, exist_model = self.model_node_tree.get_model(builded_model)
+            print(r)
             if (r):
                 print("understance model")
                 # replace_node0_models 是完全理解的模型
@@ -119,7 +120,7 @@ class ImageManager:
                     replace_node1, replace_node2 = self.get_replace_node(builded_model, replace_model)
 
                     replace_entity_node = self.model_node_tree.get_extra_node(replace_model,
-                                                                              EdgeBase.TYPE_NODE_TO_MODEL)
+                                                                              EdgeBase.TYPE_REFFER)
                     m1 = replace_entity_node.copy_node_with_child([EdgeBase.TYPE_NORMAL])
                     self.replace2(m1, replace_node1, replace_node2)
                     req = self.equal_model(m1, in_entity_node)
@@ -139,7 +140,7 @@ class ImageManager:
                         self.cached_entity_node = in_entity_node
                         return
 
-            self.model_node_tree.add_models(builded_model, in_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
+            self.model_node_tree.add_models(builded_model, in_entity_node, EdgeBase.TYPE_REFFER)
             if (len(cached_builded_model) > 0):
                 cached_node = self.cached_entity_node.copy_node_with_child([EdgeBase.TYPE_NORMAL])
                 in_node_copy = in_entity_node.copy_node_with_child([EdgeBase.TYPE_NORMAL])
@@ -152,31 +153,6 @@ class ImageManager:
             self.compare_strlist_model(strlist, in_entity_node)
             self.cached_strlist = strlist
             self.cached_entity_node = in_entity_node
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -262,8 +238,8 @@ class ImageManager:
             chain2 = self.create_replace_node_by_1(in_node_list, node_arr, replace_node)
             self.create_replace_node_by_2(in_entity_node,node_arr,replace_node)
             self.create_replace_node_by_2(cached_entity_node, node_arr, replace_node)
-            self.model_node_tree.add_models(chain1.get_node_list(), cached_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
-            self.model_node_tree.add_models(chain2.get_node_list(), in_entity_node, EdgeBase.TYPE_NODE_TO_MODEL)
+            self.model_node_tree.add_models(chain1.get_node_list(), cached_entity_node, EdgeBase.TYPE_REFFER)
+            self.model_node_tree.add_models(chain2.get_node_list(), in_entity_node, EdgeBase.TYPE_REFFER)
             # print(chain1)
             # print(chain2)
             # print(in_entity_node)
@@ -329,7 +305,7 @@ class ImageManager:
 
 
     def bind_strlist_to_node(self,strlist,node):
-        self.str_tree.add_value(strlist,node,EdgeBase.TYPE_WORD_TO_NODE)
+        self.str_tree.add_value(strlist,node,EdgeBase.TYPE_REFFER)
         #self.str_tree.say()
 
     def locate_node(self,in_node,node_arr):
@@ -371,8 +347,10 @@ class ImageManager:
         if(index==len(strlist)):
             return True
 
-        nodelist,lenlist = self.str_tree.get_linked_node_by_strlist(strlist[index:],EdgeBase.TYPE_WORD_TO_NODE)
-
+        nodelist,lenlist = self.str_tree.get_linked_node_by_strlist(strlist[index:],EdgeBase.TYPE_REFFER)
+        # print(lenlist,strlist[index:],index)
+        # for node in nodelist:
+        #     print(node.get_value())
         if(len(nodelist)==0):
             return False
 

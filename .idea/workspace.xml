@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8bccdad-5289-4a54-a9ad-cae6dc55cba0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PyProjectJZY.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyProjectJZY.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e8bccdad-5289-4a54-a9ad-cae6dc55cba0" name="Default" comment="2020 8 72">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structrue/edge_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structrue/edge_base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structrue/entity/compare_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structrue/entity/compare_tool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/entity/entity.vsd" beforeDir="false" afterPath="$PROJECT_DIR$/data_structrue/entity/entity.vsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structrue/impress_area/impress_main_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structrue/manager/image_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structrue/manager/image_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structrue/node_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structrue/node_base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structrue/stupid_tree/stupic_tree_main.py" afterDir="false" />
@@ -131,6 +128,9 @@
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_FIELDS,SHOW_INHERITED" />
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
@@ -262,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596784730371</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="2020 8 72">
+      <created>1596840574511</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1596840574511</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -289,7 +296,8 @@
     <MESSAGE value="2020 8 3" />
     <MESSAGE value="2020 8 4" />
     <MESSAGE value="2020 8 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020 8 7" />
+    <MESSAGE value="2020 8 72" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020 8 72" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596806021306">
@@ -298,28 +306,30 @@
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596806021306" />
     <state x="694" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596800227243" />
     <state x="694" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596800227244" />
-    <state x="558" y="81" key="CommitChangelistDialog2" timestamp="1596800227244" />
-    <state x="558" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1596800227244" />
+    <state x="558" y="81" key="CommitChangelistDialog2" timestamp="1596840573771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="558" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1596840573771" />
     <state x="184" y="86" key="DiffContextDialog" timestamp="1596800423559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596800423559" />
-    <state width="1899" height="192" key="GridCell.Tab.0.bottom" timestamp="1596840531695">
+    <state width="1899" height="287" key="GridCell.Tab.0.bottom" timestamp="1596892264871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596840531695" />
-    <state width="1899" height="192" key="GridCell.Tab.0.center" timestamp="1596840531694">
+    <state width="1899" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596892264871" />
+    <state width="1899" height="287" key="GridCell.Tab.0.center" timestamp="1596892264871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596840531694" />
-    <state width="1899" height="192" key="GridCell.Tab.0.left" timestamp="1596840531694">
+    <state width="1899" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596892264871" />
+    <state width="1899" height="287" key="GridCell.Tab.0.left" timestamp="1596892264871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596840531694" />
-    <state width="1899" height="192" key="GridCell.Tab.0.right" timestamp="1596840531695">
+    <state width="1899" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596892264871" />
+    <state width="1899" height="287" key="GridCell.Tab.0.right" timestamp="1596892264871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596840531695" />
+    <state width="1899" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596892264871" />
     <state x="845" y="386" width="547" height="267" key="MultipleFileMergeDialog" timestamp="1596800227244" />
     <state x="845" y="386" width="547" height="267" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596800227245" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1596806185443">
@@ -328,14 +338,18 @@
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596806185443" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1596800227245" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596800227245" />
-    <state x="662" y="121" width="596" height="798" key="find.popup" timestamp="1596809171807">
+    <state x="1063" y="149" width="596" height="798" key="find.popup" timestamp="1596874925208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="121" width="596" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596809171807" />
+    <state x="1063" y="149" width="596" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596874925208" />
     <state x="672" y="307" key="git4idea.merge.GitPullDialog" timestamp="1596800432209">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="672" y="307" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596800432209" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1596876800155">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596876800155" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
